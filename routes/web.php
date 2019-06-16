@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard', function () {
+    return view('admin.dashboard.index')->with('title','Dashboard');
+});
+
+ // **admin user route
+ Route::get('admin/user', function () {
+    return View::make('admin.user.index')->with('title', 'User');
+});
+Route::get('admin/user/create', function () {
+    return View::make('admin.user.show')->with('title', 'User');
+});
+Route::get('admin/user/edit/{id}', function ($id) {
+    return View::make('admin.user.edit', ['id'=>$id])->with('title', 'User');
+});

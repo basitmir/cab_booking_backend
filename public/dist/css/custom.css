@@ -1,0 +1,15 @@
+.label-required:after{
+    color: rgb(253, 24, 4);
+       content: ' *';
+       display:inline;
+       
+    }
+    .is-invalid-file{
+        border:2px solid #f95851;
+        border-radius: 5px;
+    }
+
+    .is-valid-file{
+        border:2px solid #22af47;
+        border-radius: 5px;
+    }
