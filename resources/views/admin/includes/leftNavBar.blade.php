@@ -20,34 +20,17 @@
                                 <span class="nav-link-text">Users</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('admin/sliderimages')}}">
-                            <span class="icon-settings mr-3"></span>
-                                <span class="nav-link-text"> Slider Images</span>
-                            </a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="{{URL::to('admin/category')}}">
                             <span class="feather-icon"><i data-feather="list"></i> </span>
-                                <span class="nav-link-text"> Category</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('admin/menu')}}">
-                            <span class="feather-icon"><i data-feather="book-open"></i> </span>
-                                <span class="nav-link-text"> Menu</span>
+                                <span class="nav-link-text">Bookings</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{URL::to('admin/order')}}">
                             <span class="feather-icon"><i data-feather="phone-call"></i> </span>
-                                <span class="nav-link-text"> Orders</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('admin/booktable')}}">
-                            <span class="feather-icon"><i data-feather="package"></i> </span>
-                                <span class="nav-link-text"> Table Bookings</span>
+                                <span class="nav-link-text">Bookings</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -56,16 +39,10 @@
                                 <span class="nav-link-text"> Payments</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('admin/chefs')}}">
-                            <span class="feather-icon"><i data-feather="layers"></i> </span>
-                                <span class="nav-link-text"> Chefs</span>
-                            </a>
-                        </li>
                           <li class="nav-item">
                             <a class="nav-link" href="{{URL::to('admin/manageAdmin')}}">
                             <span class="feather-icon"><i data-feather="award"></i></span>
-                                <span class="nav-link-text">Manage Admin</span>
+                                <span class="nav-link-text">Manage Drivers</span>
                             </a>
                         </li>
             </ul>
