@@ -100,7 +100,7 @@
                             <div class="card-header card-header-action">
                                 <h6>Ratings & Reviews</h6>
                                 <div class="d-flex align-items-center card-action-wrap">
-                                    <button class="btn btn-secondary btn-sm">Rate the template</button>
+                                    <!-- <button class="btn btn-secondary btn-sm">Rate the template</button> -->
                                 </div>
                             </div>
                             <div class="card-body">

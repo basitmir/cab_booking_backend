@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+
 class CreateUsersTable extends Migration
 {
     /**
@@ -22,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('state',20)->nullable();
             $table->string('zip',12)->nullable();
             $table->string('phone',20);
-            $table->boolean('whichUser')->nullable();
+            $table->string('whichUser')->nullable();
             $table->string('country',20)->nullable();
             $table->string('address',100)->nullable();
             $table->string('address2',50)->nullable();
