@@ -1,8 +1,8 @@
 @extends('admin.layouts.default')
 @section('content')
     <div class="row" style="backgroung-image:url({{asset('dist\img\popular_menu_bg.jpg')}}">
-        <div class="col-xl-3 pa-0">
-            <!-- <div id="owl_demo_1" class="owl-carousel dots-on-item owl-theme">
+        <div class="col-xl-6 pa-0">
+            <div id="owl_demo_1" class="owl-carousel dots-on-item owl-theme">
                 <div class="fadeOut item auth-cover-img overlay-wrap" style="background-image:url({{asset('assets/dist/img/bg2.png')}}">
                     <div class="auth-cover-info py-xl-0 pt-100 pb-50">
                         <div class="auth-cover-content text-center w-xxl-75 w-sm-90 w-xs-100">
@@ -21,14 +21,14 @@
                     </div>
                     <div class="bg-overlay bg-trans-dark-50"></div>
                 </div>
-            </div> -->
+            </div>
         </div>
         <div class="col-xl-6 pa-0">
             <div class="auth-form-wrap py-xl-0 py-50">
                 <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-xs-100">
-                    <form method="post" action="{{ action('AuthController@authenticate') }}" id="adminLogin">
+                    <form method="post" action="{{ action('AuthController@adminLogin') }}" id="adminLogin">
                         @csrf
-                        <h1 class="display-4 mb-10"> Indian Fusion Restaurant</h1>
+                        <h1 class="display-4 mb-10"> Ridez</h1>
                         <p class="mb-30">Admin Log in </p>
                         {{ session()->forget('error') }}
                         @if ($flash = session('errors'))
@@ -78,7 +78,7 @@
                               </div>
                           </div>--}}
  
-                        <!-- <p class="text-center">Do'nt have an account yet? <a href="{{URL::to('admin/register')}}">Sign Up</a></p> -->
+                        <p class="text-center">Do'nt have an account yet? <a href="{{URL::to('admin/register')}}">Sign Up</a></p>
                     </form>
                 </div>
             </div>

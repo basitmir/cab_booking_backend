@@ -172,7 +172,7 @@
                     data-feather="x"></i></span></a>
     </div>
 </form>
-<form id="logout-form" action="{{url('/admin/logout')}}" method="POST" style="display: none;">
+<form id="logout-form" action="{{ action('AuthController@adminLogout') }}" method="POST" style="display: none;">
 @csrf
 <input type="hidden" name="token" value="{{ Session::get('access_token') }}">
 </form>
