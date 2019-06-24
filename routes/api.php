@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::post('adminlogout', 'AuthController@adminLogout');
 Route::group(['middleware' => 'auth:api'], function(){
     Route::post('details', 'AuthController@details');
 });
+Route::apiResource('getUser','UserController');

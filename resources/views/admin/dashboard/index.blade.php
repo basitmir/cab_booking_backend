@@ -7,37 +7,11 @@
         <div class="hk-pg-header align-items-top">
             <div>
                            
-                <h2 class="hk-pg-title font-weight-600 mb-10">Customer Management</h2>
-                <p>Questions about onboarding lead data? <a href="#">Learn more.</a></p>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Application Management</h2>
+                <p>Joyfull and Comfortable travel <a href="#"> Download the app</a></p>
             </div>
             <div class="d-flex w-500p">
-                <select class="form-control custom-select custom-select-sm mr-15">
-                    <option selected="">Latest Products</option>
-                    <option value="1">CRM</option>
-                    <option value="2">Projects</option>
-                    <option value="3">Statistics</option>
-                </select>
-                <select class="form-control custom-select custom-select-sm mr-15">
-                    <option selected="">USA</option>
-                    <option value="1">USA</option>
-                    <option value="2">India</option>
-                    <option value="3">Australia</option>
-                </select>
-                <select class="form-control custom-select custom-select-sm">
-                    <option selected="">December</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="1">April</option>
-                    <option value="2">May</option>
-                    <option value="3">June</option>
-                    <option value="1">July</option>
-                    <option value="2">August</option>
-                    <option value="3">September</option>
-                    <option value="1">October</option>
-                    <option value="2">November</option>
-                    <option value="3">December</option>
-                </select>
+               
             </div>
         </div>
         <!-- /Title -->
@@ -119,41 +93,76 @@
                     </div>
                 </div>
                 <div class="hk-row">
-                    <div class="col-lg-6">
-                        <div class="card card-refresh">
-                            <div class="refresh-container">
-                                <div class="loader-pendulums"></div>
-                            </div>
+                    
+                    
+                    <div class="col-lg-12">
+                        <div class="card">
                             <div class="card-header card-header-action">
-                                <h6>Youtube Subscribers</h6>
+                                <h6>Ratings & Reviews</h6>
                                 <div class="d-flex align-items-center card-action-wrap">
-                                    <a href="#" class="inline-block refresh mr-15">
-                                        <i class="ion ion-md-radio-button-off"></i>
-                                    </a>
-                                    <div class="inline-block dropdown">
-                                        <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ion ion-md-more"></i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
+                                    <!-- <button class="btn btn-secondary btn-sm">Rate the template</button> -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="d-flex align-items-center h-100 justify-content-center text-center">
+                                            <div>
+                                                <div class="d-flex align-items-center  justify-content-center text-dark">
+                                                    <span class="counter-anim display-2">4.4</span>
+                                                    <span class="review-star starred ml-10">
+																<span class="feather-icon"><i data-feather="star"></i></span>
+															</span>
+                                                </div>
+                                                <span class="font-18">949 ratings & 18 reviews</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="progress-wrap lb-side-left mt-5">
+                                            <div class="progress-lb-wrap mb-10">
+                                                <label class="progress-label mnw-50p">5.0<i class="zmdi zmdi-star text-light-20 ml-5"></i></label>
+                                                <div class="progress progress-bar-rounded progress-bar-xs">
+                                                    <div class="progress-bar bg-success w-85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="progress-lb-wrap mb-10">
+                                                <label class="progress-label mnw-50p">4.0<i class="zmdi zmdi-star text-light-20 ml-5"></i></label>
+                                                <div class="progress progress-bar-rounded progress-bar-xs">
+                                                    <div class="progress-bar bg-primary w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="progress-lb-wrap mb-10">
+                                                <label class="progress-label mnw-50p">3.0<i class="zmdi zmdi-star text-light-20 ml-5"></i></label>
+                                                <div class="progress progress-bar-rounded progress-bar-xs">
+                                                    <div class="progress-bar bg-warning w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="progress-lb-wrap mb-10">
+                                                <label class="progress-label mnw-50p">2.0<i class="zmdi zmdi-star text-light-20 ml-5"></i></label>
+                                                <div class="progress progress-bar-rounded progress-bar-xs">
+                                                    <div class="progress-bar bg-warning w-55" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="progress-lb-wrap mb-10">
+                                                <label class="progress-label mnw-50p">1.0<i class="zmdi zmdi-star text-light-20 ml-5"></i></label>
+                                                <div class="progress progress-bar-rounded progress-bar-xs">
+                                                    <div class="progress-bar bg-danger w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <div class="hk-legend-wrap mb-20">
-                                    <div class="hk-legend">
-                                        <span class="d-10 bg-success rounded-circle d-inline-block"></span><span>Desktop</span>
-                                    </div>
-                                    <div class="hk-legend">
-                                        <span class="d-10 bg-light-10 rounded-circle d-inline-block"></span><span>Mobile</span>
-                                    </div>
-                                </div>
-                                <div id="e_chart_9" class="echart" style="height: 240px;"></div>
-                            </div>
                         </div>
+                       
+                    </div>
+                </div>
+               
+                <div class="hk-row">
+                    
+                <div class="col-lg-12">
+                        
                         <div class="card">
                             <div class="card-header card-header-action">
                                 <h6>Country Stats</h6>
@@ -239,437 +248,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-header card-header-action">
-                                <h6>Linkedin Key Metrics</h6>
-                                <div class="d-flex align-items-center card-action-wrap">
-                                    <a href="#" class="inline-block refresh mr-15">
-                                        <i class="ion ion-md-arrow-down"></i>
-                                    </a>
-                                    <a href="#" class="inline-block full-screen mr-15">
-                                        <i class="ion ion-md-expand"></i>
-                                    </a>
-                                    <a class="inline-block card-close" href="#" data-effect="fadeOut">
-                                        <i class="ion ion-md-close"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body pa-0">
-                                <div class="table-wrap">
-                                    <div class="table-responsive">
-                                        <table class="table table-sm table-hover mb-0">
-                                            <thead>
-                                            <tr>
-                                                <th>Metrics</th>
-                                                <th class="w-40">Period</th>
-                                                <th class="w-25">Past</th>
-                                                <th>Trend</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>Clicks</td>
-                                                <td>
-                                                    <div class="progress-wrap lb-side-left mnw-125p">
-                                                        <div class="progress-lb-wrap">
-                                                            <label class="progress-label mnw-50p">1,184</label>
-                                                            <div class="progress progress-bar-rounded progress-bar-xs">
-                                                                <div class="progress-bar bg-primary w-70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>1,234</td>
-                                                <td><div id="sparkline_1"></div></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Visits</td>
-                                                <td>
-                                                    <div class="progress-wrap lb-side-left mnw-125p">
-                                                        <div class="progress-lb-wrap">
-                                                            <label class="progress-label mnw-50p">1,425</label>
-                                                            <div class="progress progress-bar-rounded progress-bar-xs">
-                                                                <div class="progress-bar bg-success w-70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>3,458</td>
-                                                <td><div id="sparkline_2"></div></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Views</td>
-                                                <td>
-                                                    <div class="progress-wrap lb-side-left mnw-125p">
-                                                        <div class="progress-lb-wrap">
-                                                            <label class="progress-label mnw-50p">5,623</label>
-                                                            <div class="progress progress-bar-rounded progress-bar-xs">
-                                                                <div class="progress-bar bg-warning w-60" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>53,637</td>
-                                                <td><div id="sparkline_3"></div></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Returns</td>
-                                                <td>
-                                                    <div class="progress-wrap lb-side-left mnw-125p">
-                                                        <div class="progress-lb-wrap">
-                                                            <label class="progress-label mnw-50p">4,851</label>
-                                                            <div class="progress progress-bar-rounded progress-bar-xs">
-                                                                <div class="progress-bar bg-danger w-55" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>20,596</td>
-                                                <td><div id="sparkline_4"></div></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header card-header-action">
-                                <h6>Users by Gendar & Age</h6>
-                                <div class="d-flex align-items-center card-action-wrap">
-                                    <div class="inline-block dropdown">
-                                        <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ion ion-ios-more"></i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div id="e_chart_5" class="echart" style="height:250px;"></div>
-                                <div class="hk-legend-wrap mt-20">
-                                    <div class="hk-legend">
-                                        <span class="d-10 bg-primary rounded-circle d-inline-block"></span><span>18-24</span>
-                                    </div>
-                                    <div class="hk-legend">
-                                        <span class="d-10 bg-teal rounded-circle d-inline-block"></span><span>25-34</span>
-                                    </div>
-                                    <div class="hk-legend">
-                                        <span class="d-10 bg-success rounded-circle d-inline-block"></span><span>35-44</span>
-                                    </div>
-                                    <div class="hk-legend">
-                                        <span class="d-10 bg-warning rounded-circle d-inline-block"></span><span>45-54</span>
-                                    </div>
-                                    <div class="hk-legend">
-                                        <span class="d-10 bg-light-20 rounded-circle d-inline-block"></span><span>55-64</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header card-header-action">
-                                <h6>Analytics Audience Matrics</h6>
-                                <div class="d-flex align-items-center card-action-wrap">
-                                    <div class="inline-block dropdown">
-                                        <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ion ion-ios-more"></i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="hk-legend-wrap mb-20">
-                                    <div class="hk-legend">
-                                        <span class="d-10 bg-light-20 rounded-circle d-inline-block"></span><span>Users</span>
-                                    </div>
-                                    <div class="hk-legend">
-                                        <span class="d-10 bg-success rounded-circle d-inline-block"></span><span>Sessions</span>
-                                    </div>
-                                    <div class="hk-legend">
-                                        <span class="d-10 bg-primary rounded-circle d-inline-block"></span><span>Pageviews</span>
-                                    </div>
-                                </div>
-                                <div id="e_chart_6" class="echart" style="height:250px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-40 mb-30">
-                    <h5 class="d-flex align-items-end">User Activities <i class="ion ion-md-help-circle-outline text-light font-21 ml-10" data-toggle="tooltip" data-placement="top" title="User input data and activities"></i></h5>
-                </div>
-                <div class="hk-row">
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-header card-header-action">
-                                <h6>Ratings & Reviews</h6>
-                                <div class="d-flex align-items-center card-action-wrap">
-                                    <button class="btn btn-secondary btn-sm">Rate the template</button>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <div class="d-flex align-items-center h-100 justify-content-center text-center">
-                                            <div>
-                                                <div class="d-flex align-items-center  justify-content-center text-dark">
-                                                    <span class="counter-anim display-2">4.4</span>
-                                                    <span class="review-star starred ml-10">
-																<span class="feather-icon"><i data-feather="star"></i></span>
-															</span>
-                                                </div>
-                                                <span class="font-18">949 ratings & 18 reviews</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <div class="progress-wrap lb-side-left mt-5">
-                                            <div class="progress-lb-wrap mb-10">
-                                                <label class="progress-label mnw-50p">5.0<i class="zmdi zmdi-star text-light-20 ml-5"></i></label>
-                                                <div class="progress progress-bar-rounded progress-bar-xs">
-                                                    <div class="progress-bar bg-success w-85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <div class="progress-lb-wrap mb-10">
-                                                <label class="progress-label mnw-50p">4.0<i class="zmdi zmdi-star text-light-20 ml-5"></i></label>
-                                                <div class="progress progress-bar-rounded progress-bar-xs">
-                                                    <div class="progress-bar bg-primary w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <div class="progress-lb-wrap mb-10">
-                                                <label class="progress-label mnw-50p">3.0<i class="zmdi zmdi-star text-light-20 ml-5"></i></label>
-                                                <div class="progress progress-bar-rounded progress-bar-xs">
-                                                    <div class="progress-bar bg-warning w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <div class="progress-lb-wrap mb-10">
-                                                <label class="progress-label mnw-50p">2.0<i class="zmdi zmdi-star text-light-20 ml-5"></i></label>
-                                                <div class="progress progress-bar-rounded progress-bar-xs">
-                                                    <div class="progress-bar bg-warning w-55" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <div class="progress-lb-wrap mb-10">
-                                                <label class="progress-label mnw-50p">1.0<i class="zmdi zmdi-star text-light-20 ml-5"></i></label>
-                                                <div class="progress progress-bar-rounded progress-bar-xs">
-                                                    <div class="progress-bar bg-danger w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body pa-0">
-                                <div class="table-wrap">
-                                    <div class="table-responsive">
-                                        <table class="table table-hover mb-0">
-                                            <thead>
-                                            <tr>
-                                                <th>
-                                                    <div class="custom-control custom-checkbox checkbox-primary">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                                        <label class="custom-control-label" for="customCheck4">Lead Title</label>
-                                                    </div>
-                                                </th>
-                                                <th>Sales</th>
-                                                <th>Company</th>
-                                                <th>Date Created</th>
-                                                <th>Lead Status</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox checkbox-primary">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck41" checked="">
-                                                        <label class="custom-control-label" for="customCheck41"><span class="w-130p d-block text-truncate">connar_weiked@ae.com</span></label>
-                                                    </div>
-                                                </td>
-                                                <td>$2000</td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <div class="media-img-wrap d-flex mr-10">
-                                                            <div class="avatar avatar-xs">
-                                                                <span class="avatar-text avatar-text-primary rounded-circle"><span class="initial-wrap"><span>A</span></span></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <span class="d-block">American Express</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    22/10/2018
-                                                </td>
-                                                <td><span class="badge badge-primary">On track</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox checkbox-primary">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck42">
-                                                        <label class="custom-control-label" for="customCheck42"><span class="w-130p d-block text-truncate">express_notingham@em.au</span></label>
-                                                    </div>
-                                                </td>
-                                                <td>$1600</td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <div class="media-img-wrap d-flex mr-10">
-                                                            <div class="avatar avatar-xs">
-                                                                <span class="avatar-text avatar-text-danger rounded-circle"><span class="initial-wrap"><span>M</span></span></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <span class="d-block">Exxon Mobil</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    15/09/2018
-                                                </td>
-                                                <td><span class="badge badge-primary">On track</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox checkbox-primary">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck43">
-                                                        <label class="custom-control-label" for="customCheck43"><span class="w-130p d-block text-truncate">locast12_host@nova.com</span></label>
-                                                    </div>
-                                                </td>
-                                                <td>$1265</td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <div class="media-img-wrap d-flex mr-10">
-                                                            <div class="avatar avatar-xs">
-                                                                <span class="avatar-text avatar-text-teal rounded-circle"><span class="initial-wrap"><span>B</span></span></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <span class="d-block">Big Blackship</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    30/08/2018
-                                                </td>
-                                                <td><span class="badge badge-danger">Behind</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox checkbox-primary">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck44">
-                                                        <label class="custom-control-label" for="customCheck44"><span class="w-130p d-block text-truncate">grillmac@sundance.co.in</span></label>
-                                                    </div>
-                                                </td>
-                                                <td>$4562</td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <div class="media-img-wrap d-flex mr-10">
-                                                            <div class="avatar avatar-xs">
-                                                                <span class="avatar-text avatar-text-indigo rounded-circle"><span class="initial-wrap"><span>F</span></span></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <span class="d-block">Folkswagan</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    14/03/2018
-                                                </td>
-                                                <td><span class="badge badge-purple">Negotiation</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox checkbox-primary">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck45">
-                                                        <label class="custom-control-label" for="customCheck45"><span class="w-130p d-block text-truncate">admin@novotel.inc</span></label>
-                                                    </div>
-                                                </td>
-                                                <td>$5012</td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <div class="media-img-wrap d-flex mr-10">
-                                                            <div class="avatar avatar-xs">
-                                                                <span class="avatar-text avatar-text-purple rounded-circle"><span class="initial-wrap"><span>N</span></span></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <span class="d-block">Novotel</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    21/02/2018
-                                                </td>
-                                                <td><span class="badge badge-orange">Offer Made</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox checkbox-primary">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck46">
-                                                        <label class="custom-control-label" for="customCheck46"><span class="w-130p d-block text-truncate">displaypic@ho.au</span></label>
-                                                    </div>
-                                                </td>
-                                                <td>$1245</td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <div class="media-img-wrap d-flex mr-10">
-                                                            <div class="avatar avatar-xs">
-                                                                <span class="avatar-text avatar-text-pink rounded-circle"><span class="initial-wrap"><span>D</span></span></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <span class="d-block">Displaypic</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    3/02/2018
-                                                </td>
-                                                <td><span class="badge badge-orange">Offer Made</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox checkbox-primary">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck47">
-                                                        <label class="custom-control-label" for="customCheck47"><span class="w-130p d-block text-truncate">manager@cobito.com</span></label>
-                                                    </div>
-                                                </td>
-                                                <td>$1245</td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <div class="media-img-wrap d-flex mr-10">
-                                                            <div class="avatar avatar-xs">
-                                                                <span class="avatar-text avatar-text-yellow rounded-circle"><span class="initial-wrap"><span>C</span></span></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <span class="d-block">Cobito co.</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    18/01/2018
-                                                </td>
-                                                <td><span class="badge badge-danger">Behind</span></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    
                     <div class="col-lg-4">
                         <div class="card overflow-hide border-0">
                             <div class="card-body pa-0">
@@ -716,71 +296,7 @@
                             </div>
                         </div>
 
-                        <div class="card">
-                            <div class="card-header card-header-action">
-                                <h6>Recent Activity</h6>
-                                <div class="d-flex align-items-center card-action-wrap">
-                                    <div class="inline-block dropdown">
-                                        <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ion ion-ios-more"></i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="user-activity user-activity-sm">
-                                    <div class="media">
-                                        <div class="media-img-wrap">
-                                            <div class="avatar avatar-xs">
-                                                <img src="{{asset('dist/img/avatar2.jpg')}}" alt="user" class="avatar-img rounded-circle">
-                                            </div>
-                                        </div>
-                                        <div class="media-body">
-                                            <div>
-                                                <span class="d-block mb-5"><span class="font-weight-500 text-dark text-capitalize">Laura Thompson</span><span class="pl-5">joined josh groben team.</span></span>
-                                                <span class="d-block font-13">3 hours ago</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-img-wrap">
-                                            <div class="avatar avatar-xs">
-                                                <img src="{{asset('dist/img/avatar3.jpg')}}" alt="user" class="avatar-img rounded-circle">
-                                            </div>
-                                        </div>
-                                        <div class="media-body">
-                                            <div>
-                                                <span class="d-block mb-5"><span class="font-weight-500 text-dark text-capitalize">Meayme Fletcher</span><span class="pl-5">liked photos</span></span>
-                                                <span class="d-block font-13 mb-10">6 hours ago</span>
-                                            </div>
-                                            <div class="d-flex">
-                                                <a href="#" class="w-75p mr-10"><img class="card-img-top rounded" src="dist/img/slide1.jpg" alt="Card image cap"></a>
-                                                <a href="#" class="w-75p mr-10"><img class="card-img-top rounded" src="dist/img/slide2.jpg" alt="Card image cap"></a>
-                                                <a href="#" class="w-75p mr-10"><img class="card-img-top rounded" src="dist/img/slide3.jpg" alt="Card image cap"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-img-wrap">
-                                            <div class="avatar avatar-xs">
-                                                <img src="{{asset('dist/img/avatar4.jpg')}}" alt="user" class="avatar-img rounded-circle">
-                                            </div>
-                                        </div>
-                                        <div class="media-body">
-                                            <div>
-                                                <span class="d-block mb-5"><span class="font-weight-500 text-dark text-capitalize">Billy Flowers</span><span class="pl-5">Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text.</span></span>
-                                                <span class="d-block font-13">32 days ago</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
