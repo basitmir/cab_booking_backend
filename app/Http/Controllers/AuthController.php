@@ -22,6 +22,7 @@ class AuthController extends Controller
 
 
     public function adminLogin(Request $request){ 
+        // return $request;
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required',
@@ -30,10 +31,10 @@ class AuthController extends Controller
             return response()->json(['error'=>$validator->errors()], 401);
         }
 
-        $credentials = request(['email', 'password']);
+        $credentials = request(['email', 'password', 'whichUser']);
         // $credentials['active'] = 1;
         $credentials['deleted_at'] = null;
-        // return $credentials;
+        // $credentials['whichUser'] = null;
         if(!Auth::attempt($credentials))
             return response()->json([
                 'message' => 'Unauthorized'
@@ -74,6 +75,7 @@ class AuthController extends Controller
             'userName' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
+            'whichUser' => 'admin',
             'activation_token' => str_random(60)
         ]);
         $user->save();
@@ -112,6 +114,7 @@ class AuthController extends Controller
     public function adminLogout(Request $request)
     {
         $request->user()->token()->revoke();
+        return redirect('admin')->with(['token' => $token]);
         return response()->json([
             'message' => 'Successfully logged out'
         ]);

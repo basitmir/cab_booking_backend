@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('admin/dashboard', function () {
     return View::make('admin.dashboard.index')->with('title','Dashboard');
 });
