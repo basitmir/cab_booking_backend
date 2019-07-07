@@ -21,23 +21,23 @@
     <div class="col-xl-7 pa-0">
         <div class="auth-form-wrap py-xl-0 py-50">
             <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-100">
-                <form class="needs-validation" method="post" action="/register" novalidate>
+                <form class="needs-validation" method="post" action="{{ action('AuthController@adminRegister') }}" novalidate>
                 @csrf
                     <h1 class="display-4 mb-10">Sign up for free</h1>
                     <p class="mb-30">Create your account and start your free trial today</p>
                     <div class="form-row">
-                        <div class="col-md-6 form-group">
-                            <input class="form-control" placeholder="First name" value="" type="text" name="fname" required>
+                        <div class="col-md-12 form-group">
+                            <input class="form-control" placeholder="User Name" value="" type="text" name="name" required>
                             <div class="invalid-feedback">
                                 First Name is required.
                             </div>
                         </div>
-                        <div class="col-md-6 form-group">
+                        <!-- <div class="col-md-6 form-group">
                             <input class="form-control" placeholder="Last name" value="" type="text" name="lname" required>
                             <div class="invalid-feedback">
                                 Last Name is required.
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="form-group">
                         <input class="form-control" placeholder="Email" type="email" name="email">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <input class="form-control" placeholder="Confirm Password" id="confirmPassword"
+                            <input class="form-control" placeholder="Confirm Password" id="confirmPassword" name="c_password"
                                 type="password">
                             <div class="invalid-feedback" id="check">
                                 Invalid Password.

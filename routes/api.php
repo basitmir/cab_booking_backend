@@ -18,4 +18,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//AUTH ROUTES CREATED BY SA**************************
+Route::post('adminlogin', 'AuthController@adminLogin');
+Route::post('adminregister', 'AuthController@adminRegister');
+Route::post('adminlogout', 'AuthController@adminLogout');
+
+
+Route::group(['middleware' => 'auth:api'], function(){
+    Route::post('details', 'AuthController@details');
+});
 Route::apiResource('getUser','UserController');
