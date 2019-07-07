@@ -41,7 +41,7 @@
                             <small class="form-text text-danger" id="emailError"></small>
                            
                         </div>
-                        <input type="hidden" name="check" value="1">
+                        <input type="hidden" name="whichUser" value="admin">
                         <div class="form-group">
                             <!-- <div class="input-group"> -->
                                 <input class="form-control" name="password" placeholder="Password" id="password" type="password" required>
