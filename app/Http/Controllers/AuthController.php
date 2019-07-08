@@ -55,7 +55,6 @@ class AuthController extends Controller
     }
 
     public function userLogin(Request $request){ 
-        // return $request;
         $info =[];
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
@@ -65,11 +64,10 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json(['error'=>$validator->errors()], 401);
         }
-
+        $request->request->add(['whichUser' => 'user']); 
         $credentials = request(['email', 'password', 'whichUser']);
-        // $credentials['active'] = 1;
         $credentials['deleted_at'] = null;
-        // $credentials['whichUser'] = null;
+
         if(!Auth::attempt($credentials))
             return response()->json([
                 'message' => 'Unauthorized'
@@ -86,8 +84,9 @@ class AuthController extends Controller
         $user=Auth::user();
         // return $user;
         $info = [
+            'id' => $user->id,
             'username'=> $user->userName,
-            'emaail'=> $user->email,
+            'email'=> $user->email,
             'token'=> $token,
         ];
         return $info;
