@@ -16,7 +16,7 @@ use App\Http\Controllers\UserController;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+}); 
 
 //AUTH ROUTES CREATED BY SA**************************
 Route::post('adminlogin', 'AuthController@adminLogin');
