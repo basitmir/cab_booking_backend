@@ -54,6 +54,45 @@ class AuthController extends Controller
         return redirect('admin/dashboard')->with(['token' => $token]);
     }
 
+    public function userLogin(Request $request){ 
+        // return $request;
+        $info =[];
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+          ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        $credentials = request(['email', 'password', 'whichUser']);
+        // $credentials['active'] = 1;
+        $credentials['deleted_at'] = null;
+        // $credentials['whichUser'] = null;
+        if(!Auth::attempt($credentials))
+            return response()->json([
+                'message' => 'Unauthorized'
+            ], 401);
+            
+        $user = $request->user();
+        $tokenResult = $user->createToken('Personal Access Token');
+        $token = $tokenResult->token;
+        if ($request->remember_me)
+            $token->expires_at = Carbon::now()->addWeeks(1);
+        $token->save();
+        $token = $this->respondWithToken($tokenResult);
+        $data = json_decode($token->getContent(), true);
+        $user=Auth::user();
+        // return $user;
+        $info = [
+            'username'=> $user->userName,
+            'emaail'=> $user->email,
+            'token'=> $token,
+        ];
+        return $info;
+    }
+
     /** 
     * Register api 
     * 
@@ -85,6 +124,33 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Successfully created user!'
         ], 201);
+    }
+
+    public function userRegister(Request $request) 
+    { 
+        // return $request;
+        $validator = Validator::make($request->all(), [ 
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',  
+        ]);   
+        if ($validator->fails()) {          
+            return response()->json(['error'=>$validator->errors()], 401);                        
+        }  
+        $user = new User([
+            'userName' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'whichUser' => 'user',
+            'activation_token' => str_random(60)
+        ]);
+        $user->save();
+        // $user->notify(new SignupActivate($user));
+        $token = $user->activation_token;
+        // return redirect('admin')->with(['token' => $token]);
+        return response()->json([
+            'message' => 'Successfully created user!'
+        ], 200);
     }
 
     /** 
