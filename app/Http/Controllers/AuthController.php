@@ -125,12 +125,12 @@ class AuthController extends Controller
             'message' => 'Successfully created user!'
         ], 201);
     }
-
+ 
     public function userRegister(Request $request) 
     { 
         // return $request;
         $validator = Validator::make($request->all(), [ 
-            'name' => 'required',
+            'userName' => 'required',
             'email' => 'required|email',
             'password' => 'required',  
         ]);   
@@ -138,7 +138,7 @@ class AuthController extends Controller
             return response()->json(['error'=>$validator->errors()], 401);                        
         }  
         $user = new User([
-            'userName' => $request->name,
+            'userName' => $request->userName,
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'whichUser' => 'user',
