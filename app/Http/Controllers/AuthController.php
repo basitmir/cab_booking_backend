@@ -70,9 +70,10 @@ class AuthController extends Controller
 
         if(!Auth::attempt($credentials))
             return response()->json([
-                'message' => 'Unauthorized'
+                'message' => 'Invalid Login Credentials',
+                'hasError'=>true,
             ], 401);
-            
+             
         $user = $request->user();
         $tokenResult = $user->createToken('Personal Access Token');
         $token = $tokenResult->token;
@@ -82,12 +83,14 @@ class AuthController extends Controller
         $token = $this->respondWithToken($tokenResult);
         $data = json_decode($token->getContent(), true);
         $user=Auth::user();
-        // return $user;
+        
         $info = [
             'id' => $user->id,
             'username'=> $user->userName,
             'email'=> $user->email,
-            'token'=> $token,
+            'token'=> $data['access_token'],
+            'message'=>'Successfull Login',
+            'hasError'=>false,
         ];
         return $info;
     }
