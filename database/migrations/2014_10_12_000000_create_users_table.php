@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('activation_token');
             $table->string('phone',20)->nullable();
             $table->string('whichUser')->nullable();
+            $table->boolean('isAvailable')->default(true);
             $table->string('country',20)->nullable();
             $table->string('address',100)->nullable();
             $table->string('address2',50)->nullable();

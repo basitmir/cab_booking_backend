@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Resources\User as UserResources;
-
+use DB;
 
 class UserController extends Controller
 {
@@ -85,5 +85,25 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getAllDrivers(){
+        $allDrivers = DB::table('users')->where('whichUser','=','driver')->get();
+        return $allDrivers;
+    }
+
+    public function getAvailableDrivers(){
+        $availableDrivers = DB::table('users')
+            ->where('whichUser','=','driver')
+            ->where('isAvailable','=',true)->get();
+        return $availableDrivers;
+    }
+    
+    public function addDriver(){
+
+    }
+
+    public function deleteDriver(){
+
     }
 }
