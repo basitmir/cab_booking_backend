@@ -7,6 +7,20 @@
          <!-- Container -->
          <div class="container">
 <!-- Row -->
+            <div class="hk-pg-header mb-10">
+                <!-- <div> -->
+                    <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
+                                        data-feather="book"></i></span></span>Drivers</h4>
+                <!-- </div> -->
+                <div class="d-flex">
+                    <!-- <div> -->
+                        <a class="hk-pg-title btn btn-primary btn-sm" href="{{URL::to('admin/driver/create')}}">
+                        <span class="mr-5">
+                        <span class="feather-icon"><i data-feather="plus-square"></i></span>
+                        </span>Add New Driver</a>
+                    <!-- </div> -->
+                </div>
+            </div>
             <div class="row">
                 <div class="col-xl-12">
                     <section class="hk-sec-wrapper">
@@ -17,10 +31,15 @@
                                         <thead>
                                             <tr>
                                             <th>ID</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
+                                            <th>Image</th>
                                                 <th>Email</th>
+                                                <th>Username</th>
+                                                <!-- <th>Password</th> -->
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Zip</th>
                                                 <th>Phone</th>
+                                                <th>Is Available</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -29,10 +48,15 @@
                                         <tfoot>
                                             <tr>
                                             <th>ID</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
+                                            <th>Image</th>
                                                 <th>Email</th>
+                                                <th>Username</th>
+                                                <!-- <th>Password</th> -->
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Zip</th>
                                                 <th>Phone</th>
+                                                <th>Is Available</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -105,13 +129,13 @@ function fetchUsers(){
     $("#userTbl").DataTable().destroy()
     $('#userTbl').DataTable({
                         ajax:{
-                            url: "{{ url('/api/user') }}",
+                            url: "{{ url('/api/getAllDrivers') }}",
                             type: 'GET',
                             dataType: 'JSON',
                             headers: {"Authorization": 'Bearer ' + token},
                             dataSrc: function ( json ) {
                                 console.log(json);
-                                return json.data;
+                                return json;
                             }
                             },
                             scrollX: true,
@@ -122,17 +146,38 @@ function fetchUsers(){
     	sLengthMenu: "_MENU_items",
 columns: [
 { "data": "id" },
-{ "data": "firstName"},
-{ "data": "lastName" },
-{ "data": "email" },
+{
+    "data": "null",
+    "render": function(data, type, full, meta) {
+
+        var driverImage = '{{URL::asset('assets/images') }}' + '/' + full.image;
+        if (driverImage != undefined) {
+
+            return '<div class="avatar">' +
+                '<img src="' + driverImage +
+                '" alt="user" class="avatar-img rounded-circle">' +
+                '</div>';
+        } else {
+            return "";
+        }
+
+    }
+},
+{ "data": "email"},
+{ "data": "userName" },
+// { "data": "password"},
+{ "data": "city" },
+{ "data": "state" },
+{ "data": "zip" },
 { "data": "phone" },
+{ "data": "isAvailable" },
 { "data": "null", 
 "render": function ( data, type, full, meta ) { 
     var url = '{{ url("/admin/user/edit", "id") }}';
     url = url.replace('id', full.id);
     return '<div class="d-flex">'+
-                '<a href="javascript:void(0);" id="'+full.id+'" class="text-primary makeadmin-button mr-15">Make Admin</a>'+
-                '<a href="javascript:void(0);" id="'+full.id+'" class="text-primary delete-button mr-15">Delete</a>'+
+                '<a href="' + url + '" class="text-primary mr-15 fa fa-edit mt-1 "></a>' +
+                '<a href="javascript:void(0);" id="'+full.id+'" class="text-danger delete-button mr-15"><i class="fa fa-trash"><i></a>'+
             '</div>';
 }
 },

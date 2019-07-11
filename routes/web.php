@@ -18,15 +18,15 @@ Route::get('admin/dashboard', function () {
     return View::make('admin.dashboard.index')->with('title','Dashboard');
 });
 
- // **admin user route
- Route::get('admin/user', function () {
-    return View::make('admin.user.index')->with('title', 'User');
+ // **admin Dser route
+ Route::get('admin/driver', function () {
+    return View::make('admin.driver.index')->with('title', 'Driver');
 });
-Route::get('admin/user/create', function () {
-    return View::make('admin.user.show')->with('title', 'User');
+Route::get('admin/driver/create', function () {
+    return View::make('admin.driver.show')->with('title', 'Driver');
 });
-Route::get('admin/user/edit/{id}', function ($id) {
-    return View::make('admin.user.edit', ['id'=>$id])->with('title', 'User');
+Route::get('admin/driver/edit/{id}', function ($id) {
+    return View::make('admin.driver.edit', ['id'=>$id])->with('title', 'Driver');
 });
 Auth::routes();
 

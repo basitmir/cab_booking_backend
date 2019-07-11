@@ -14,10 +14,10 @@
                 </li>
                        
                         <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('admin/user')}}">
+                            <a class="nav-link" href="{{URL::to('admin/driver')}}">
                             <span class="feather-icon"><i data-feather="user-check"></i></span>
 
-                                <span class="nav-link-text">Users</span>
+                                <span class="nav-link-text">Drivers</span>
                             </a>
                         </li>
                         

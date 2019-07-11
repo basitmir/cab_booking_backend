@@ -98,9 +98,43 @@ class UserController extends Controller
             ->where('isAvailable','=',true)->get();
         return $availableDrivers;
     }
-    
-    public function addDriver(){
 
+    public function addDriver(Request $request){
+        // return $request;
+        $photo = $request->file('file');
+        $name = time().'.'.$photo->getClientOriginalExtension();
+        $destinationPath = 'assets/images';
+        $photo->move($destinationPath, $name);
+        
+
+        $driver=DB::table('users')->insert(
+            [   
+                'image'=> $name,
+                'password'=> bcrypt($request->password),
+                'email' => $request->email,
+                'phone'=> $request->phone,
+                'username'=> $request->userName,
+                'city'=> $request->city,
+                'state'=>$request->state,
+                'zip'=>$request->zip,
+                'country'=>$request->country,
+                'whichUser'=> "driver",
+            ]
+        );
+        if ($driver) {
+            $document = [
+                "result"=>"success",
+                "message"=>"Record saved successfully",
+                "title"=>"Success",
+            ];
+        }else{
+            $document = [
+                "result"=>"error",
+                "message"=>"Record saving Failed!",
+                "title"=>"Error",
+            ];
+        }
+        return response()->json($document,200);
     }
 
     public function deleteDriver(){

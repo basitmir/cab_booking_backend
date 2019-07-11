@@ -37,5 +37,5 @@ Route::apiResource('getUser','UserController');
 // Driver apis
 Route::get('getAllDrivers','UserController@getAllDrivers');
 Route::get('getAvailableDrivers','UserController@getAvailableDrivers');
-Route::post('AddDriver','UserController@AddDriver');
+Route::post('addDriver','UserController@addDriver');
 Route::delete('deleteDriver','UserController@deleteDriver');
