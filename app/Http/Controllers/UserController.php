@@ -137,7 +137,22 @@ class UserController extends Controller
         return response()->json($document,200);
     }
 
-    public function deleteDriver(){
-
+    public function deleteDriver(Request $request, $id){
+        // return $id;
+        $deleted = DB::table('users')->where('id', '=', $id)->delete();
+    if($deleted){
+            $document = [
+                "result"=>"success",
+                "message"=>"Record deleted successfully",
+                "title"=>"Success",
+            ];
+        }else{
+            $document = [
+                "result"=>"error",
+                "message"=>"Record deleting Failed!",
+                "title"=>"Error",
+            ];
+        }
+        return response()->json($document,200);
     }
 }

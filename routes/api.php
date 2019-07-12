@@ -38,4 +38,4 @@ Route::apiResource('getUser','UserController');
 Route::get('getAllDrivers','UserController@getAllDrivers');
 Route::get('getAvailableDrivers','UserController@getAvailableDrivers');
 Route::post('addDriver','UserController@addDriver');
-Route::delete('deleteDriver','UserController@deleteDriver');
+Route::delete('deleteDriver/{id}','UserController@deleteDriver');

@@ -186,7 +186,7 @@ columns: [
 }
 function deleteUser(id) {
     var token =  '{{ Session::get('access_token') }}';
-    var url = '{{ url("/api/user", "id") }}';
+    var url = '{{ url("/api/deleteDriver", "id") }}';
     url = url.replace('id', id);
     swal({
   title: "Are you sure?",
@@ -236,60 +236,7 @@ function deleteUser(id) {
   } 
 });
 }
-function makeadmin(id) {
-    var token =  '{{ Session::get('access_token') }}';
-    var url = '{{ url("/api/updateadmin", "id") }}';
-    url = url.replace('id', id);
-        swal({
-            title: "Are you sure?",
-            text: "Make this user as ADMIN!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-        })
-        .then((willUpdate) => {
-        if (willUpdate) {    
-            console.log("in dele");
-                $.ajax({
-                    url: url,
-                    type: 'POST',
-                    headers: {"Authorization": 'Bearer ' + token},
-                    dataType: 'JSON',
-                    data: {
-                    isAdmin: 1,
-                        '_method': 'PUT'
-                    },
-                    success: function(data) {
-                        console.log("jejje");
-                        console.log(data);
-                        switch (data['result']) {
-                            case 'success':
-                                _isDirty = false;
-                                swal({
-                                    title: data['title'],
-                                    text: data['message'],
-                                    icon: data['result'],
-                                    button: "OK",
-                                    timer: 2000,
-                                }).then(function() {
-                                    // document.location.href = "{!! URL::to('admin/user'); !!}";
-                                    fetchUsers();
-                                });
-                                break;
-                            case 'error':
-                                swal({
-                                    title: data['title'],
-                                    text: data['message'],
-                                    icon: data['result'],
-                                    button: "OK",
-                                });
-                                break;
-                        }
-                    }
-                });
-            } 
-        });
-}
+
 </script>
 @stop
     <!-- Footer -->
