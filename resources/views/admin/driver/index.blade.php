@@ -45,6 +45,7 @@
                                                 <th>Age</th>
                                                 <th>Experience</th>
                                                 <th>Vacancy</th>
+                                                <th>Address</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -66,6 +67,7 @@
                                                 <th>Age</th>
                                                 <th>Experience</th>
                                                 <th>Vacancy</th>
+                                                <th>Address</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -185,6 +187,7 @@ columns: [
 { "data": "age" },
 { "data": "experience" },
 { "data": "vacancy" },
+{ "data": "address" },
 { "data": "null", 
 "render": function ( data, type, full, meta ) { 
     var url = '{{ url("/admin/user/edit", "id") }}';

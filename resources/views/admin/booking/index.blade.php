@@ -10,14 +10,14 @@
             <div class="hk-pg-header mb-10">
                 <!-- <div> -->
                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
-                                        data-feather="book"></i></span></span>Drivers</h4>
+                                        data-feather="book"></i></span></span>Bookings</h4>
                 <!-- </div> -->
                 <div class="d-flex">
                     <!-- <div> -->
-                        <a class="hk-pg-title btn btn-primary btn-sm" href="{{URL::to('admin/driver/create')}}">
+                        <!-- <a class="hk-pg-title btn btn-primary btn-sm" href="{{URL::to('admin/driver/create')}}">
                         <span class="mr-5">
                         <span class="feather-icon"><i data-feather="plus-square"></i></span>
-                        </span>Add New Driver</a>
+                        </span>Add New Driver</a> -->
                     <!-- </div> -->
                 </div>
             </div>
@@ -124,16 +124,14 @@
     $(document).ready(function() {
         console.log("hello");
         // Fetch Users
-        fetchUsers();
+        fetchBookings();
 // Delete Function
 $(document).on('click','.delete-button',function(){
-    deleteUser($(this).attr('id'));
-        });
-$(document).on('click','.makeadmin-button',function(){
-    makeadmin($(this).attr('id'));
-        });
+    deleteBooking($(this).attr('id'));
 });
-function fetchUsers(){
+
+});
+function fetchBookings(){
     var token =  '{{ Session::get('access_token') }}';
     $("#userTbl").DataTable().destroy()
     $('#userTbl').DataTable({
@@ -198,9 +196,9 @@ columns: [
 ]
 });
 }
-function deleteUser(id) {
+function deleteBooking(id) {
     var token =  '{{ Session::get('access_token') }}';
-    var url = '{{ url("/api/deleteDriver", "id") }}';
+    var url = '{{ url("/api/deleteBooking", "id") }}';
     url = url.replace('id', id);
     swal({
   title: "Are you sure?",
@@ -230,7 +228,7 @@ function deleteUser(id) {
                                                 button: "OK",
                                                 timer: 2000,
                                                 }).then(function() {
-                                                    fetchUsers();
+                                                    fetchBookings();
                                                 });  
                                         break;
                             case 'error':

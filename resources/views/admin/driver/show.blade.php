@@ -136,6 +136,12 @@
                                         <small class="form-text text-danger d-none" id="vacancyHelp">Vacancy is required</small>
 
                                     </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="address" class="colored label-required">Address</label>
+                                        <input class="form-control validate-required" id="address" placeholder="Address" value="" type="text">
+                                        <small class="form-text text-danger d-none" id="addressHelp">Address is required</small>
+
+                                    </div>
                                 </div>
                                 <hr>
                                 <div class="row justify-content-md-center">
@@ -283,6 +289,7 @@
                     form_data.append('cabNumber', $('#cabNumber').val());
                     form_data.append('gender', $('#gender').val());
                     form_data.append('vacancy', $('#vacancy').val());
+                    form_data.append('address', $('#address').val());
 
                     $.ajax({
                         url: "{{ url('/api/addDriver') }}",

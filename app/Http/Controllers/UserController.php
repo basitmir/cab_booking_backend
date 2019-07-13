@@ -123,6 +123,7 @@ class UserController extends Controller
                 'cabNumber'=>$request->cabNumber,
                 'gender'=>$request->gender,
                 'vacancy'=>$request->vacancy,
+                'address'=>$request->address,
                 'whichUser'=> "driver",
             ]
         );
