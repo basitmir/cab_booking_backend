@@ -91,6 +91,11 @@ class UserController extends Controller
         $allDrivers = DB::table('users')->where('whichUser','=','driver')->get();
         return $allDrivers;
     }
+
+    public function getAllUsers(){
+        $allUsers = DB::table('users')->where('whichUser','=','user')->get();
+        return $allUsers;
+    }
  
     public function getAvailableDrivers(){
         $availableDrivers = DB::table('users')
@@ -163,5 +168,24 @@ class UserController extends Controller
     }
     public function editDriver(){
 
+    }
+
+    public function deleteUser(Request $request, $id){
+        // return $id;
+        $deleted = DB::table('users')->where('id', '=', $id)->delete();
+    if($deleted){
+            $document = [
+                "result"=>"success",
+                "message"=>"Record deleted successfully",
+                "title"=>"Success",
+            ];
+        }else{
+            $document = [
+                "result"=>"error",
+                "message"=>"Record deleting Failed!",
+                "title"=>"Error",
+            ];
+        }
+        return response()->json($document,200);
     }
 }

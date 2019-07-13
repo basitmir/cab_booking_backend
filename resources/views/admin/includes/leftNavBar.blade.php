@@ -34,12 +34,6 @@
                                 <span class="nav-link-text">Users</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('admin/manageAdmin')}}">
-                            <span class="feather-icon"><i data-feather="award"></i></span>
-                                <span class="nav-link-text">Manage Drivers</span>
-                            </a>
-                        </li>
             </ul>
                      
 

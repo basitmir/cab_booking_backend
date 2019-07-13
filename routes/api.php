@@ -41,6 +41,11 @@ Route::post('addDriver','UserController@addDriver');
 Route::delete('deleteDriver/{id}','UserController@deleteDriver');
 Route::put('editDriver/{id}','UserController@editDriver');
 
+// User apis
+Route::get('getAllUsers','UserController@getAllUsers');
+Route::delete('deleteUser/{id}','UserController@deleteUser');
+Route::put('editUser/{id}','UserController@editUser');
+
 //Bookings api
 Route::get('getAllBookings','BookingController@getAllBookings');
 Route::post('addBooking','BookingController@addBooking');

@@ -12,14 +12,14 @@
             <a id="settings_toggle_btn" class="nav-link nav-link-hover" href="javascript:void(0);"><span
                     class="feather-icon"><i data-feather="settings"></i></span></a>
         </li> -->
-        <li class="nav-item dropdown dropdown-notifications">
+        <!-- <li class="nav-item dropdown dropdown-notifications">
             <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false"><span class="feather-icon"><i
                         data-feather="bell"></i></span><span class="badge-wrap"><span
                         class="badge badge-primary badge-indicator-sm badge-pill pulse" id="badge-indicator"></span></span></a>
             <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                 <h6 class="dropdown-header">Notifications<a href="javascript:void(0);" class=""id="clear">Clear</a></h6>
-                <div class="notifications-nicescroll-bar" id="notification">
+                <div class="notifications-nicescroll-bar" id="notification"> -->
                     <!-- <a href="javascript:void(0);" class="dropdown-item">
                         <div class="media">
                             <div class="media-img-wrap">
@@ -114,9 +114,9 @@
                             </div>
                         </div>
                     </a> -->
-                </div>
+                <!-- </div>
             </div>
-        </li>
+        </li> -->
         <li class="nav-item dropdown dropdown-authentication">
             <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -137,7 +137,7 @@
                         class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
                 <!-- <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-card"></i><span>My -->
                         <!-- balance</span></a> -->
-                <a class="dropdown-item" href="inbox.html"><i
+                <!-- <a class="dropdown-item" href="inbox.html"><i
                         class="dropdown-icon zmdi zmdi-email"></i><span>Inbox</span></a>
                 <a class="dropdown-item" href="#"><i
                         class="dropdown-icon zmdi zmdi-settings"></i><span>Settings</span></a>
@@ -153,7 +153,7 @@
                         <a class="dropdown-item" href="#"><i
                                 class="dropdown-icon zmdi zmdi-minus-circle-outline text-danger"></i><span>Offline</span></a>
                     </div>
-                </div>
+                </div> -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item logout" href="javascript::void(0)"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
