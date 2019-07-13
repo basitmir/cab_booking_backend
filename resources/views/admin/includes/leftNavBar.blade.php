@@ -29,12 +29,12 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('admin/payment')}}">
+                            <a class="nav-link" href="{{URL::to('admin/user')}}">
                             <span class="feather-icon"><i data-feather="credit-card"></i> </span>
-                                <span class="nav-link-text"> Payments</span>
+                                <span class="nav-link-text">Users</span>
                             </a>
                         </li>
-                          <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{URL::to('admin/manageAdmin')}}">
                             <span class="feather-icon"><i data-feather="award"></i></span>
                                 <span class="nav-link-text">Manage Drivers</span>
