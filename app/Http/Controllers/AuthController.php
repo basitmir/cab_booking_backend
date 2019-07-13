@@ -63,7 +63,7 @@ class AuthController extends Controller
 
         if ($validator->fails()) {
             return response()->json(['error'=>$validator->errors()], 401);
-        }
+        } 
         $request->request->add(['whichUser' => 'user']); 
         $credentials = request(['email', 'password', 'whichUser']);
         $credentials['deleted_at'] = null;
@@ -71,7 +71,7 @@ class AuthController extends Controller
         if(!Auth::attempt($credentials))
             return response()->json([
                 'message' => 'Invalid Login Credentials',
-                'hasError'=>true,
+                'error'=>true,
             ], 401);
              
         $user = $request->user();
@@ -86,11 +86,11 @@ class AuthController extends Controller
         
         $info = [
             'id' => $user->id,
-            'username'=> $user->userName,
+            'userName'=> $user->userName,
             'email'=> $user->email,
             'token'=> $data['access_token'],
             'message'=>'Successfull Login',
-            'hasError'=>false,
+            'error'=>false,
         ];
         return $info;
     }
@@ -102,7 +102,7 @@ class AuthController extends Controller
     */
 
     public function adminRegister(Request $request) 
-    { 
+    {  
         // return $request;
         $validator = Validator::make($request->all(), [ 
             'name' => 'required',
