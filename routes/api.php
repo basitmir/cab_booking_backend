@@ -38,4 +38,11 @@ Route::apiResource('getUser','UserController');
 Route::get('getAllDrivers','UserController@getAllDrivers');
 Route::get('getAvailableDrivers','UserController@getAvailableDrivers');
 Route::post('addDriver','UserController@addDriver');
-Route::delete('deleteDriver','UserController@deleteDriver');
+Route::delete('deleteDriver/{id}','UserController@deleteDriver');
+Route::put('editDriver/{id}','UserController@editDriver');
+
+//Bookings api
+Route::get('getAllBookings','BookingController@getAllBookings');
+Route::post('addBooking','BookingController@addBooking');
+Route::delete('deleteBooking/{id}','BookingController@deleteBooking');
+Route::put('editBooking/{id}','BookingController@editBooking');

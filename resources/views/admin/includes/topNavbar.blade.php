@@ -8,10 +8,10 @@
             <a id="navbar_search_btn" class="nav-link nav-link-hover" href="javascript:void(0);"><span
                     class="feather-icon"><i data-feather="search"></i></span></a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a id="settings_toggle_btn" class="nav-link nav-link-hover" href="javascript:void(0);"><span
                     class="feather-icon"><i data-feather="settings"></i></span></a>
-        </li>
+        </li> -->
         <li class="nav-item dropdown dropdown-notifications">
             <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false"><span class="feather-icon"><i
