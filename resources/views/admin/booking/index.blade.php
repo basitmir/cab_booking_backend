@@ -31,8 +31,8 @@
                                         <thead>
                                             <tr>
                                             <th>Id</th>
-                                            <th>Image</th>
-                                                <th>Email</th>
+                                            <th>User Id</th>
+                                                <th>Amount</th>
                                                 <th>Username</th>
                                                 <!-- <th>Password</th> -->
                                                 <th>City</th>
@@ -52,7 +52,7 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                            <th>Id</th>
+                                            <th>ID</th>
                                             <th>Image</th>
                                                 <th>Email</th>
                                                 <th>Username</th>
@@ -138,7 +138,7 @@ function fetchUsers(){
     $("#userTbl").DataTable().destroy()
     $('#userTbl').DataTable({
                         ajax:{
-                            url: "{{ url('/api/getAllDrivers') }}",
+                            url: "{{ url('/api/getAllBookings') }}",
                             type: 'GET',
                             dataType: 'JSON',
                             headers: {"Authorization": 'Bearer ' + token},

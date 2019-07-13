@@ -18,8 +18,8 @@ Route::get('admin/dashboard', function () {
     return View::make('admin.dashboard.index')->with('title','Dashboard');
 });
 
- // **admin Dser route
- Route::get('admin/driver', function () {
+// **admin Driver route
+Route::get('admin/driver', function () {
     return View::make('admin.driver.index')->with('title', 'Driver');
 });
 Route::get('admin/driver/create', function () {
@@ -28,6 +28,20 @@ Route::get('admin/driver/create', function () {
 Route::get('admin/driver/edit/{id}', function ($id) {
     return View::make('admin.driver.edit', ['id'=>$id])->with('title', 'Driver');
 });
+
+
+// **admin Booking route
+Route::get('admin/booking', function () {
+    return View::make('admin.booking.index')->with('title', 'Booking');
+});
+Route::get('admin/booking/create', function () {
+    return View::make('admin.booking.show')->with('title', 'Booking');
+});
+Route::get('admin/booking/edit/{id}', function ($id) {
+    return View::make('admin.booking.edit', ['id'=>$id])->with('title', 'Booking');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

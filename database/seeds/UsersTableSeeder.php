@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'userName' => 'admin',
             'email'=>'admin@admin.com',
-            'password' => '$2y$10$QHmp5FsrtIXfWYq1IRIzgulp.LfyXqqLqyS/pLvHD2xob0LIyLGxm',
+            'password' => '$2y$10$cyqMnZmYgtYQsAtwnK0EMuQ66URlYZo4kHvzyaYFnQ.9AwHNfQxP.',
             'active'=>1,
             'activation_token'=>'',
             'whichUser'=>"admin"

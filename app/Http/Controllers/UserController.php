@@ -118,6 +118,11 @@ class UserController extends Controller
                 'state'=>$request->state,
                 'zip'=>$request->zip,
                 'country'=>$request->country,
+                'age'=>$request->age,
+                'experience'=>$request->experience,
+                'cabNumber'=>$request->cabNumber,
+                'gender'=>$request->gender,
+                'vacancy'=>$request->vacancy,
                 'whichUser'=> "driver",
             ]
         );
@@ -154,5 +159,8 @@ class UserController extends Controller
             ];
         }
         return response()->json($document,200);
+    }
+    public function editDriver(){
+
     }
 }

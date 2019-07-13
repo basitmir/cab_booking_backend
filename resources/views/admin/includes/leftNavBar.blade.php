@@ -22,17 +22,12 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('admin/category')}}">
-                            <span class="feather-icon"><i data-feather="list"></i> </span>
-                                <span class="nav-link-text">Bookings</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{URL::to('admin/order')}}">
+                            <a class="nav-link" href="{{URL::to('admin/booking')}}">
                             <span class="feather-icon"><i data-feather="phone-call"></i> </span>
                                 <span class="nav-link-text">Bookings</span>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{URL::to('admin/payment')}}">
                             <span class="feather-icon"><i data-feather="credit-card"></i> </span>
