@@ -166,8 +166,74 @@ class UserController extends Controller
         }
         return response()->json($document,200);
     }
-    public function editDriver(){
+    public function editDriver(Request $request, $id){
+        // return $request;
+        if($request->hasFile('file')){
+            // return "ASdasasf";
+            $photo = $request->file('file');
+            $name = time().'.'.$photo->getClientOriginalExtension();
+            $destinationPath = 'assets/images';
+            $photo->move($destinationPath, $name);
 
+            $updated = DB::table('users')->where('id',$id)->update(
+                [
+                    'image' => $name,
+                    'userName' => $request->userName,
+                    'email' => $request->email,
+                    'password' => $request->password,
+                    'phone' => $request->phone,
+                    'city' => $request->city,
+                    'state' => $request->state,
+                    'zip' => $request->zip,
+                    'country' => $request->country,
+                    'cabNumber' => $request->cabNumber,
+                    'experience' => $request->experience,
+                    'address' => $request->address,
+                    'age' => $request->age,
+                    'vacancy' => $request->vacancy,
+                    'gender' => $request->gender,
+                ]);
+        }else{
+            // return "fafafaa";
+            $updated = DB::table('users')->where('id',$id)->update(
+                [
+                    'userName' => $request->userName,
+                    'email' => $request->email,
+                    'password' => $request->password,
+                    'phone' => $request->phone,
+                    'city' => $request->city,
+                    'state' => $request->state,
+                    'zip' => $request->zip,
+                    'country' => $request->country,
+                    'cabNumber' => $request->cabNumber,
+                    'experience' => $request->experience,
+                    'address' => $request->address,
+                    'age' => $request->age,
+                    'vacancy' => $request->vacancy,
+                    'gender' => $request->gender,
+                ]);
+                $update=true;
+        }
+        if($updated==0 && $update==true){
+            $document = [
+                "result"=>"success",
+                "message"=>"Record updated successfully",
+                "title"=>"Success",
+            ];
+        }elseif($updated){
+                $document = [
+                    "result"=>"success",
+                    "message"=>"Record updated successfully",
+                    "title"=>"Success",
+                ];
+            }else{
+                $document = [
+                    "result"=>"error",
+                    "message"=>"Record update Failed!",
+                    "title"=>"Error",
+                ];
+            }
+            return response()->json($document,200);
     }
 
     public function deleteUser(Request $request, $id){
@@ -187,5 +253,10 @@ class UserController extends Controller
             ];
         }
         return response()->json($document,200);
+    }
+
+    public function getDriver($id){
+        $booking= DB::table('users')->where('id','=',$id)->get();
+        return $booking;
     }
 }

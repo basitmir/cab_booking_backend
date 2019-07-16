@@ -11,7 +11,7 @@
         <div class="hk-pg-header">
             <h4 class="hk-pg-title">
                 <span class="pg-title-icon"><span class="feather-icon"><i data-feather="align-left"></i></span>
-                </span>User</h4>
+                </span>Edit Driver</h4>
         </div>
         <!-- /Title -->
 
@@ -19,90 +19,137 @@
         <div class="row">
             <div class="col-xl-12">
             <section class="hk-sec-wrapper">
-                    <h5 class="hk-sec-title">Add User</h5>
+                    <!-- <h5 class="hk-sec-title">Edit Driver</h5> -->
                     <div class="row">
-                        <div class="col-sm">
-                            <div class="row justify-content-md-center">
-                                <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">First Name</label>
-                                    <input class="form-control validate-required" id="firstName" placeholder="First Name" value=""
-                                        type="text">
-                                        <small class="form-text text-danger d-none" id="firstNameHelp">Product Name is required</small>
+                    <div class="col-sm">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-4 form-group">
+                                        <label for="email" class="colored label-required">Email</label>
+                                        <input class="form-control validate-required" id="email" placeholder="Email" value=""
+                                               type="email">
+                                        <small class="form-text text-danger d-none" id="emailHelp">Email is required</small>
+
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="UserName" class="colored label-required">User Name</label>
+                                        <input class="form-control validate-required" id="userName" placeholder="User Name" value=""
+                                               type="text">
+                                        <small class="form-text text-danger d-none" id="userNameHelp">User Name is required</small>
+
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="password" class="colored label-required">Password</label>
+                                        <input class="form-control validate-required" id="password" placeholder="Password" value="" type="password">
+                                        <small class="form-text text-danger d-none" id="passwordHelp">Password is required</small>
+                                    </div>
+
 
                                 </div>
-                                <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">Last Name</label>
-                                    <input class="form-control validate-required" id="lastName" placeholder="Last Name" value=""
-                                        type="text">
-                                        <small class="form-text text-danger d-none" id="lastNameHelp">Last Name is required</small>
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-4 form-group">
+                                        <label for="lastName" class="colored label-required">Phone</label>
+                                        <input class="form-control validate-required" id="phone" placeholder="Phone" value="" type="number">
+                                        <small class="form-text text-danger d-none" id="phoneHelp">Phone Number is required</small>
 
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="lastName" class="colored label-required">City</label>
+                                        <input class="form-control validate-required" id="city" placeholder="City" value="" type="text">
+                                        <small class="form-text text-danger d-none" id="cityHelp">City Name is required</small>
+
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="lastName" class="colored label-required">State</label>
+                                        <input class="form-control validate-required" id="state" placeholder="State" value="" type="text">
+                                        <small class="form-text text-danger d-none" id="stateHelp">State is required</small>
+
+                                    </div>
                                 </div>
-                                <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">Email</label>
-                                    <input class="form-control validate-required" id="email" placeholder="Email" value="" type="email">
-                                     <small class="form-text text-danger d-none" id="emailHelp">Email is required</small>
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-4 form-group">
+                                        <label for="lastName" class="colored label-required">Zip</label>
+                                        <input class="form-control validate-required" id="zip" placeholder="Zip" value="" type="number">
+                                        <small class="form-text text-danger d-none" id="zipHelp">Zip is required</small>
+
+                                    </div>
+
+                                    <div class="col-md-4 form-group">
+                                        <label for="lastName" class="colored label-required">Country</label>
+                                        <input class="form-control validate-required" id="country" placeholder="Country" value="" type="text">
+                                        <small class="form-text text-danger d-none" id="countryHelp">Country is required</small>
+
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                    <label for="mainimg" class="colored">Main Image</label>
+                                    <div class="fileinput fileinput-new input-group" id="mainimg" data-provides="fileinput">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="form-control text-truncate" data-trigger="fileinput"><i
+                                                class="glyphicon glyphicon-file fileinput-exists"></i> <span
+                                                class="fileinput-filename"></span></div>
+                                        <span class="input-group-append">
+                                            <span class=" btn btn-primary btn-file"><span class="fileinput-new">Select
+                                                    file</span><span class="fileinput-exists">Change</span>
+                                                <input type="file" name="file" id="file" required
+                                                    class="">
+                                            </span>
+                                            <a href="#" class="btn btn-secondary fileinput-exists"
+                                                data-dismiss="fileinput">Remove</a>
+                                        </span>
+                                    </div>
+                                    <small class="form-text text-danger d-none" id="fileHelp">Image is required</small>
                                 </div>
-                               
+                                </div>
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-4 form-group">
+                                        <label for="cabNumber" class="colored label-required">Cab Number</label>
+                                        <input class="form-control validate-required" id="cabNumber" placeholder="Cab Number" value="" type="text">
+                                        <small class="form-text text-danger d-none" id="cabNumberHelp">Cab Number is required</small>
+
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="age" class="colored label-required">Age</label>
+                                        <input class="form-control validate-required" id="age" placeholder="Age" value="" type="number">
+                                        <small class="form-text text-danger d-none" id="ageHelp">Age is required</small>
+
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="experience" class="colored label-required">Experience</label>
+                                        <input class="form-control validate-required" id="experience" placeholder="Experience" value="" type="text">
+                                        <small class="form-text text-danger d-none" id="experienceHelp">Experience is required</small>
+
+                                    </div>
+                                </div>
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-4 form-group">
+                                                <label for="gender" class="colored label-required">Gender</label>
+                                                <select class="form-control validate-required custom-select d-block w-100" id="gender">
+                                                    <!-- <option value="">Choos</option> -->
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="vacancy" class="colored label-required">Vacancy</label>
+                                        <input class="form-control validate-required" id="vacancy" placeholder="Vacancy" value="" type="number">
+                                        <small class="form-text text-danger d-none" id="vacancyHelp">Vacancy is required</small>
+
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="address" class="colored label-required">Address</label>
+                                        <input class="form-control validate-required" id="address" placeholder="Address" value="" type="text">
+                                        <small class="form-text text-danger d-none" id="addressHelp">Address is required</small>
+
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row justify-content-md-center">
+                                    <button id="saveDriver" class="btn btn-primary mr-10">Save</button>
+                                    <button id="cancelDriver" class="btn btn-light">Cancel</button>
+                                </div>
 
                             </div>
-                            <div class="row justify-content-md-center">
-                                <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">Phone</label>
-                                    <input class="form-control validate-required" id="phone" placeholder="Phone" value="" type="number">
-                                    <small class="form-text text-danger d-none" id="phoneHelp">Number is required</small>
-
-                                </div>
-                                <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">City</label>
-                                    <input class="form-control validate-required" id="city" placeholder="City" value="" type="text">
-                                    <small class="form-text text-danger d-none" id="cityHelp">City Name is required</small>
-
-                                </div>
-                                <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">State</label>
-                                    <input class="form-control validate-required" id="state" placeholder="State" value="" type="text">
-                                    <small class="form-text text-danger d-none" id="stateHelp">State is required</small>
-
-                                </div>
-                            </div>
-                            <div class="row justify-content-md-center">
-                                <div class="col-md-6 form-group">
-                                    <label for="lastName" class="colored label-required">Zip</label>
-                                    <input class="form-control validate-required" id="zip" placeholder="Zip" value="" type="number">
-                                    <small class="form-text text-danger d-none" id="zipHelp">Zip is required</small>
-
-                                </div>
-
-                                <div class="col-md-6 form-group">
-                                    <label for="lastName" class="colored label-required">Country</label>
-                                    <input class="form-control validate-required" id="country" placeholder="Country" value="" type="text">
-                                    <small class="form-text text-danger d-none" id="countryHelp">Country is required</small>
-
-                                </div>
-                            </div>
-                            <div class="row justify-content-md-center">
-                                <div class="col-md-12 form-group">
-                                    <label for="lastName" class="colored label-required">Address</label>
-                                    <input class="form-control validate-required" id="address" placeholder="Address" value="" type="text">
-                                    <small class="form-text text-danger d-none" id="addressHelp">Address is required</small>
-
-                                </div>
-                            </div>
-                            <div class="row justify-content-md-center">
-                                <div class="col-md-12 form-group">
-                                    <label for="lastName" class="colored label-required">Address2</label>
-                                    <input class="form-control validate-required" id="address2" placeholder="Address2" value="" type="text">
-                                    <small class="form-text text-danger d-none" id="address2Help">Address is required</small>
-
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row justify-content-center">
-                                <button id="saveUser" class="btn btn-primary mr-10">Save</button>
-                                <button id="cancelUser" class="btn btn-light">Cancel</button>
-                            </div>
-
-                        </div>
                     </div>
                 </section>
             </div>
@@ -174,11 +221,11 @@
         });
         fetchById();
         // Save Function
-        $(document).on('click', '#saveUser', function() {
-            saveUser();
+        $(document).on('click', '#saveDriver', function() {
+            saveDriver();
         });
         // Cancel Function
-        $(document).on('click', '#cancelUser', function() {
+        $(document).on('click', '#cancelDriver', function() {
             if (_isDirty) {
                 swal({
                         title: "",
@@ -189,11 +236,11 @@
                     })
                     .then((willDelete) => {
                         if (willDelete) {
-                            document.location.href = "{!! URL::to('admin/user'); !!}";
+                            document.location.href = "{!! URL::to('admin/driver'); !!}";
                         } else {}
                     });
             } else {
-                document.location.href = "{!! URL::to('admin/user'); !!}";
+                document.location.href = "{!! URL::to('admin/driver'); !!}";
             }
         });
     });
@@ -203,7 +250,7 @@
         console.log("hello1");
         var id = "{!! $id !!}";
         console.log(id);
-        var url = '{{ url("/api/user", "id") }}';
+        var url = '{{ url("/api/getDriver", "id") }}';
         url = url.replace('id', id);
         console.log(url);
         $.ajax({
@@ -212,23 +259,32 @@
             dataType: 'JSON',
             headers: {"Authorization": 'Bearer ' + token},
             data: {},
-            success: function(jsonData) {
-                console.log(jsonData.data);
-                $('#firstName').val(jsonData.data.firstName);
-                $('#lastName').val(jsonData.data.lastName);
-                $('#email').val(jsonData.data.email);
-                $('#phone').val(jsonData.data.phone);
-                $('#city').val(jsonData.data.city);
-                $('#state').val(jsonData.data.state);
-                $('#zip').val(jsonData.data.zip);
-                $('#country').val(jsonData.data.country);
-                $('#address').val(jsonData.data.address);
-                $('#address2').val(jsonData.data.address2);
+            success: function(Data) {
+                jsonData = Data[0];
+                console.log(jsonData);
+                $('#email').val(jsonData.email);
+                $('#userName').val(jsonData.userName);
+                $('#password').val(jsonData.password);
+                $('#phone').val(jsonData.phone);
+                $('#city').val(jsonData.city);
+                $('#state').val(jsonData.state);
+                $('#zip').val(jsonData.zip);
+                $('#country').val(jsonData.country);
+                $('#address').val(jsonData.address);
+                $('#cabNumber').val(jsonData.cabNumber);
+                $('#experience').val(jsonData.experience);
+                $('#age').val(jsonData.age);
+                // $('#gender').val(jsonData.age);
+                // console.log(jsonData.gender)
+                $('#gender').val(jsonData.gender);
+                // document.getElementById('gender').value = jsonData.gender
+                $('#vacancy').val(jsonData.vacancy);
+                // $('#file').val(jsonData.image);
             }
         });
     }
 
-    function saveUser() {
+    function saveDriver() {
         var token =  '{{ Session::get('access_token') }}';
 
         var isValid = true;
@@ -259,39 +315,36 @@
 
 
         var id = "{!! $id !!}";
-        var url = '{{ url("/api/user", "id") }}';
+        var url = '{{ url("/api/editDriver", "id") }}';
         url = url.replace('id', id);
-        console.log("hhhhhh");
-        firstName=$('#firstName').val();
-        lastName=$('#lastName').val();
-        email=$('#email').val();
-        phone=$('#phone').val();
-        city=$('#city').val();
-        state=$('#state').val();
-        zip=$('#zip').val();
-        country=$('#country').val();
-        address=$('#address').val();
-        address2=$('#address2').val();
-                console.log("hhadasdasdhhhh");
 
+        var driverImage = $('#file').prop('files')[0];
+        var form_data = new FormData();
+        form_data.append('file', driverImage);
+        form_data.append('userName', $('#userName').val());
+        form_data.append('password', $('#password').val());
+        form_data.append('email', $('#email').val());
+        form_data.append('phone', $('#phone').val());
+        form_data.append('city', $('#city').val());
+        form_data.append('zip', $('#zip').val());
+        form_data.append('country', $('#country').val());
+        form_data.append('state', $('#state').val());
+        form_data.append('age', $('#age').val());
+        form_data.append('experience', $('#experience').val());
+        form_data.append('cabNumber', $('#cabNumber').val());
+        form_data.append('gender', $('#gender').val());
+        form_data.append('vacancy', $('#vacancy').val());
+        form_data.append('address', $('#address').val());
+        
         $.ajax({
             url: url,
+            cache: false,
+            contentType: false,
+            processData: false,
             type: 'POST',
-            dataType: 'JSON',
             headers: {"Authorization": 'Bearer ' + token},
-            data: {
-               firstName: firstName,
-                lastName: lastName,
-                email: email,
-                phone: phone,
-                city: city,
-                state: state,
-                zip: zip,
-                country: country,
-                address: address,
-                address2: address2,
-                '_method': 'PUT'
-            },
+            data: form_data,
+
             success: function(data) {
                 console.log(data);
                 switch (data['result']) {
@@ -304,7 +357,7 @@
                             button: "OK",
                             timer: 2000,
                         }).then(function() {
-                            document.location.href = "{!! URL::to('admin/user'); !!}";
+                            document.location.href = "{!! URL::to('admin/driver'); !!}";
                         });
                         break;
                     case 'error':

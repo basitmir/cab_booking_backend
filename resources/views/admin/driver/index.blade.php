@@ -126,16 +126,13 @@
     $(document).ready(function() {
         console.log("hello");
         // Fetch Users
-        fetchUsers();
+        fetchDrivers();
 // Delete Function
 $(document).on('click','.delete-button',function(){
-    deleteUser($(this).attr('id'));
-        });
-$(document).on('click','.makeadmin-button',function(){
-    makeadmin($(this).attr('id'));
+    deleteDriver($(this).attr('id'));
         });
 });
-function fetchUsers(){
+function fetchDrivers(){
     var token =  '{{ Session::get('access_token') }}';
     $("#userTbl").DataTable().destroy()
     $('#userTbl').DataTable({
@@ -190,7 +187,7 @@ columns: [
 { "data": "address" },
 { "data": "null", 
 "render": function ( data, type, full, meta ) { 
-    var url = '{{ url("/admin/user/edit", "id") }}';
+    var url = '{{ url("/admin/driver/edit", "id") }}';
     url = url.replace('id', full.id);
     return '<div class="d-flex">'+
                 '<a href="' + url + '" class="text-primary mr-15 fa fa-edit mt-1 "></a>' +
@@ -201,7 +198,7 @@ columns: [
 ]
 });
 }
-function deleteUser(id) {
+function deleteDriver(id) {
     var token =  '{{ Session::get('access_token') }}';
     var url = '{{ url("/api/deleteDriver", "id") }}';
     url = url.replace('id', id);

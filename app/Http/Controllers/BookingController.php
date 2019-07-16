@@ -7,8 +7,13 @@ use DB;
 class BookingController extends Controller
 {
     public function getAllBookings(){
-        $allBookings = DB::table('bookings')->get();
-        return $allBookings;
+        // $allBookings = DB::table('bookings')->get();
+        // return $allBookings;
+        $booking = DB::table('bookings')
+          ->join('users', 'bookings.driverAssignedId', '=', 'users.id', 'AND' , 'bookings.bookingUserId', '=', 'users.id')
+          ->select('bookings.*', 'users.phone', 'users.userName','users.cabNumber')
+          ->get();
+        return $booking;
     }
 
     public function addBooking(Request $request){

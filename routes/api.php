@@ -39,7 +39,8 @@ Route::get('getAllDrivers','UserController@getAllDrivers');
 Route::get('getAvailableDrivers','UserController@getAvailableDrivers');
 Route::post('addDriver','UserController@addDriver');
 Route::delete('deleteDriver/{id}','UserController@deleteDriver');
-Route::put('editDriver/{id}','UserController@editDriver');
+Route::get('getDriver/{id}','UserController@getDriver');
+Route::post('editDriver/{id}','UserController@editDriver');
 
 // User apis
 Route::get('getAllUsers','UserController@getAllUsers');
