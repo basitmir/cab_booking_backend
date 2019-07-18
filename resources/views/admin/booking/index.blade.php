@@ -10,14 +10,14 @@
             <div class="hk-pg-header mb-10">
                 <!-- <div> -->
                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
-                                        data-feather="book"></i></span></span>Drivers</h4>
+                                        data-feather="book"></i></span></span>Bookings</h4>
                 <!-- </div> -->
                 <div class="d-flex">
                     <!-- <div> -->
-                        <a class="hk-pg-title btn btn-primary btn-sm" href="{{URL::to('admin/driver/create')}}">
+                        <!-- <a class="hk-pg-title btn btn-primary btn-sm" href="{{URL::to('admin/driver/create')}}">
                         <span class="mr-5">
                         <span class="feather-icon"><i data-feather="plus-square"></i></span>
-                        </span>Add New Driver</a>
+                        </span>Add New Driver</a> -->
                     <!-- </div> -->
                 </div>
             </div>
@@ -31,42 +31,51 @@
                                         <thead>
                                             <tr>
                                             <th>Id</th>
+                                            <th>Driver Image</th>
+                                            <th>User Image</th>
+                                            <th>Driver Id</th>
                                             <th>User Id</th>
-                                                <th>Amount</th>
-                                                <th>Username</th>
-                                                <!-- <th>Password</th> -->
-                                                <th>City</th>
-                                                <th>State</th>
-                                                <th>Zip</th>
-                                                <th>Phone</th>
-                                                <th>Is Available</th>
-                                                <th>Cab Number</th>
-                                                <th>Gender</th>
-                                                <th>Age</th>
-                                                <th>Experience</th>
-                                                <th>Vacancy</th>
-                                                <th>Action</th>
+                                            <th>Driver Username</th>
+                                            <th>User Username</th>
+                                            <th>Driver Phone</th>
+                                            <th>User Phone</th>
+                                            <th>Booking Type</th>
+                                            <th>Booking Amount</th>
+                                            <th>Cab Number</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>City</th>
+                                            <th>State</th>
+                                            <th>Zip</th>
+                                            <th>Vacancy</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                            <th>ID</th>
-                                            <th>Image</th>
-                                                <th>Email</th>
-                                                <th>Username</th>
-                                                <th>City</th>
-                                                <th>State</th>
-                                                <th>Zip</th>
-                                                <th>Phone</th>
-                                                <th>Is Available</th>
-                                                <th>Cab Number</th>
-                                                <th>Gender</th>
-                                                <th>Age</th>
-                                                <th>Experience</th>
-                                                <th>Vacancy</th>
-                                                <th>Action</th>
+                                            <th>Id</th>
+                                            <th>Driver Image</th>
+                                            <th>User Image</th>
+                                            <th>Driver Id</th>
+                                            <th>User Id</th>
+                                            <th>Driver Username</th>
+                                            <th>User Username</th>
+                                            <th>Driver Phone</th>
+                                            <th>User Phone</th>
+                                            <th>Booking Type</th>
+                                            <th>Booking Amount</th>
+                                            <th>Cab Number</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>City</th>
+                                            <th>State</th>
+                                            <th>Zip</th>
+                                            <th>Vacancy</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -124,16 +133,14 @@
     $(document).ready(function() {
         console.log("hello");
         // Fetch Users
-        fetchUsers();
+        fetchBookings();
 // Delete Function
 $(document).on('click','.delete-button',function(){
-    deleteUser($(this).attr('id'));
-        });
-$(document).on('click','.makeadmin-button',function(){
-    makeadmin($(this).attr('id'));
-        });
+    deleteBooking($(this).attr('id'));
 });
-function fetchUsers(){
+
+});
+function fetchBookings(){
     var token =  '{{ Session::get('access_token') }}';
     $("#userTbl").DataTable().destroy()
     $('#userTbl').DataTable({
@@ -159,7 +166,7 @@ columns: [
     "data": "null",
     "render": function(data, type, full, meta) {
 
-        var driverImage = '{{URL::asset('assets/images') }}' + '/' + full.image;
+        var driverImage = '{{URL::asset('assets/images') }}' + '/' + full.driver_image;
         if (driverImage != undefined) {
 
             return '<div class="avatar">' +
@@ -172,19 +179,39 @@ columns: [
 
     }
 },
-{ "data": "email"},
-{ "data": "userName" },
-// { "data": "password"},
-{ "data": "city" },
-{ "data": "state" },
-{ "data": "zip" },
-{ "data": "phone" },
-{ "data": "isAvailable" },
-{ "data": "cabNumber" },
-{ "data": "gender" },
-{ "data": "age" },
-{ "data": "experience" },
-{ "data": "vacancy" },
+{
+    "data": "null",
+    "render": function(data, type, full, meta) {
+
+        var driverImage = '{{URL::asset('assets/images') }}' + '/' + full.user_image;
+        if (driverImage != undefined) {
+
+            return '<div class="avatar">' +
+                '<img src="' + driverImage +
+                '" alt="user" class="avatar-img rounded-circle">' +
+                '</div>';
+        } else {
+            return "";
+        }
+
+    }
+},
+{ "data": "driverAssignedId" },
+{ "data": "bookingUserId"},
+{ "data": "driver_userName" },
+{ "data": "user_userName"},
+{ "data": "driver_phone" },
+{ "data": "user_phone"},
+{ "data": "bookingTripType"},
+{ "data": "bookingAmount"},
+{ "data": "driver_cabNumber"},
+{ "data": "bookingAddressFrom"},
+{ "data": "bookingAddressTo"},
+{ "data": "bookingCity" },
+{ "data": "bookingState" },
+{ "data": "bookingZip" },
+{ "data": "driver_vacancy" },
+{ "data": "date" },
 { "data": "null", 
 "render": function ( data, type, full, meta ) { 
     var url = '{{ url("/admin/user/edit", "id") }}';
@@ -198,9 +225,9 @@ columns: [
 ]
 });
 }
-function deleteUser(id) {
+function deleteBooking(id) {
     var token =  '{{ Session::get('access_token') }}';
-    var url = '{{ url("/api/deleteDriver", "id") }}';
+    var url = '{{ url("/api/deleteBooking", "id") }}';
     url = url.replace('id', id);
     swal({
   title: "Are you sure?",
@@ -230,7 +257,7 @@ function deleteUser(id) {
                                                 button: "OK",
                                                 timer: 2000,
                                                 }).then(function() {
-                                                    fetchUsers();
+                                                    fetchBookings();
                                                 });  
                                         break;
                             case 'error':

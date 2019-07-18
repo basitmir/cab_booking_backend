@@ -10,16 +10,18 @@
             <div class="hk-pg-header mb-10">
                 <!-- <div> -->
                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
-                                        data-feather="book"></i></span></span>Drivers</h4>
+                                        data-feather="book"></i></span></span>Users</h4>
                 <!-- </div> -->
-                <div class="d-flex">
+                <!-- <div class="d-flex"> -->
                     <!-- <div> -->
-                        <a class="hk-pg-title btn btn-primary btn-sm" href="{{URL::to('admin/driver/create')}}">
+                        <!-- <a class="hk-pg-title btn btn-primary btn-sm" href="{{URL::to('admin/driver/create')}}">
                         <span class="mr-5">
                         <span class="feather-icon"><i data-feather="plus-square"></i></span>
-                        </span>Add New Driver</a>
+                        </span>
+                        Add New Driver
+                    </a> -->
                     <!-- </div> -->
-                </div>
+                <!-- </div> -->
             </div>
             <div class="row">
                 <div class="col-xl-12">
@@ -39,12 +41,12 @@
                                                 <th>State</th>
                                                 <th>Zip</th>
                                                 <th>Phone</th>
-                                                <th>Is Available</th>
-                                                <th>Cab Number</th>
-                                                <th>Gender</th>
-                                                <th>Age</th>
-                                                <th>Experience</th>
-                                                <th>Vacancy</th>
+                                                <!-- <th>Is Available</th> -->
+                                                <!-- <th>Cab Number</th> -->
+                                                <!-- <th>Gender</th> -->
+                                                <!-- <th>Age</th> -->
+                                                <!-- <th>Experience</th> -->
+                                                <!-- <th>Vacancy</th> -->
                                                 <th>Address</th>
                                                 <th>Action</th>
                                             </tr>
@@ -61,12 +63,12 @@
                                                 <th>State</th>
                                                 <th>Zip</th>
                                                 <th>Phone</th>
-                                                <th>Is Available</th>
-                                                <th>Cab Number</th>
-                                                <th>Gender</th>
-                                                <th>Age</th>
+                                                <!-- <th>Is Available</th> -->
+                                                <!-- <th>Cab Number</th> -->
+                                                <!-- <th>Gender</th> -->
+                                                <!-- <th>Age</th>
                                                 <th>Experience</th>
-                                                <th>Vacancy</th>
+                                                <th>Vacancy</th> -->
                                                 <th>Address</th>
                                                 <th>Action</th>
                                             </tr>
@@ -126,18 +128,19 @@
     $(document).ready(function() {
         console.log("hello");
         // Fetch Users
-        fetchDrivers();
+        fetchUsers();
 // Delete Function
 $(document).on('click','.delete-button',function(){
-    deleteDriver($(this).attr('id'));
+    deleteUser($(this).attr('id'));
         });
+
 });
-function fetchDrivers(){
+function fetchUsers(){
     var token =  '{{ Session::get('access_token') }}';
     $("#userTbl").DataTable().destroy()
     $('#userTbl').DataTable({
                         ajax:{
-                            url: "{{ url('/api/getAllDrivers') }}",
+                            url: "{{ url('/api/getAllUsers') }}",
                             type: 'GET',
                             dataType: 'JSON',
                             headers: {"Authorization": 'Bearer ' + token},
@@ -178,16 +181,16 @@ columns: [
 { "data": "state" },
 { "data": "zip" },
 { "data": "phone" },
-{ "data": "isAvailable" },
-{ "data": "cabNumber" },
-{ "data": "gender" },
-{ "data": "age" },
-{ "data": "experience" },
-{ "data": "vacancy" },
+// { "data": "isAvailable" },
+// { "data": "cabNumber" },
+// { "data": "gender" },
+// { "data": "age" },
+// { "data": "experience" },
+// { "data": "vacancy" },
 { "data": "address" },
 { "data": "null", 
 "render": function ( data, type, full, meta ) { 
-    var url = '{{ url("/admin/driver/edit", "id") }}';
+    var url = '{{ url("/admin/user/edit", "id") }}';
     url = url.replace('id', full.id);
     return '<div class="d-flex">'+
                 '<a href="' + url + '" class="text-primary mr-15 fa fa-edit mt-1 "></a>' +
@@ -198,9 +201,9 @@ columns: [
 ]
 });
 }
-function deleteDriver(id) {
+function deleteUser(id) {
     var token =  '{{ Session::get('access_token') }}';
-    var url = '{{ url("/api/deleteDriver", "id") }}';
+    var url = '{{ url("/api/deleteUser", "id") }}';
     url = url.replace('id', id);
     swal({
   title: "Are you sure?",
