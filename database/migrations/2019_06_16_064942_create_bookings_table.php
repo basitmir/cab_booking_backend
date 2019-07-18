@@ -31,7 +31,7 @@ class CreateBookingsTable extends Migration
             $table->string('bookingState', 50)->nullable();;
             $table->string('bookingZip', 20)->nullable();;
             $table->string('bookingCountry', 50)->nullable();;
-            $table->UnsignedInteger('bookingPhone')->nullable();;
+            $table->bigInteger('bookingPhone')->nullable();;
             $table->string('bookingPaymentStatus', 100)->nullable();;
             $table->tinyinteger('bookingShipped')->nullable();;
             $table->string('bookingTrackingNumber', 80)->nullable();;
