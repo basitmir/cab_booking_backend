@@ -9,17 +9,18 @@ class BookingController extends Controller
     public function getAllBookings(){
         // $allBookings = DB::table('bookings')->get();
         // return $allBookings;
-        $booking = DB::table('bookings')
-          ->join('users', 'bookings.driverAssignedId', '=', 'users.id', 'AND' , 'bookings.bookingUserId', '=', 'users.id')
-          ->select('bookings.*', 'users.phone', 'users.userName','users.cabNumber')
-          ->get();
+        $booking = DB::table('bookings as book')
+            ->Join('users as au', 'book.driverAssignedId', '=', 'au.id')
+            ->Join('users as cu', 'book.bookingUserId', '=', 'cu.id')
+            ->select('book.*','au.userName as driver_userName', 'au.phone as driver_phone','au.vacancy as driver_vacancy','au.cabNumber as driver_cabNumber', 'au.email as driver_email', 'au.image as driver_image','cu.userName as user_userName', 'cu.phone as user_phone', 'cu.email as user_email','cu.image as user_image')
+            ->get();
         return $booking;
-    }
-
+    } 
+ 
     public function addBooking(Request $request){
         // return $request;
-        $response = DB::table('users')->where('id','=',$request->driverAssignedId)->first();
-        // return $response;
+        $response = DB::table('users')->where('id','=',$request->driverAssignId)->first();
+       
         if($response->isAvailable=="not-available"){
             return response()->json(['error'=> 
                 [
@@ -28,18 +29,19 @@ class BookingController extends Controller
                 ]
             ], 403)->header('Content-Type', 'application/json');
         }
+       
         $booking=DB::table('bookings')->insert(
             [   
                 'bookingUserId'=> $request->bookingUserId,
-                'driverAssignedId'=> $request->driverAssignedId,
-                'bookingName'=> $request->bookingName,
-                'bookingAddressFrom'=> $request->bookingAddressFrom,
-                'bookingAddressTo'=> $request->bookingAddressTo,
-                'bookingLandmark'=>$request->landmark,
+                'driverAssignedId'=> $request->driverAssignId,
+                'bookingName'=> $request->name,
+                'bookingAddressFrom'=> $request->origin,
+                'bookingAddressTo'=> $request->destination,
+                'bookingLandmark'=>$request->input('origin landMark'),
                 'date'=>$request->date,
                 'time'=>$request->time,
-                'bookingPhone'=>$request->bookingPhone,
-                'bookingTripType'=>$request->bookingTripType,
+                'bookingPhone'=>$request->contact,
+                'bookingTripType'=>$request->tripDetails,
                 // 'bookingAmount' => $request->bookingAmount,
                 // 'bookingCity'=>$request->bookingCity,
                 // 'bookingState'=>$request->bookingState,
@@ -47,6 +49,7 @@ class BookingController extends Controller
                 // 'bookingCountry'=>$request->bookingCountry,
             ]
         );
+       
         DB::table('users')->where('id',$request->driverAssignedId)->update(['isAvailable' => 'not-available']);
         if ($booking) {
             $document = [

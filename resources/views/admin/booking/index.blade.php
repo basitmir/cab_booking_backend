@@ -31,42 +31,51 @@
                                         <thead>
                                             <tr>
                                             <th>Id</th>
+                                            <th>Driver Image</th>
+                                            <th>User Image</th>
+                                            <th>Driver Id</th>
                                             <th>User Id</th>
-                                                <th>Amount</th>
-                                                <th>Username</th>
-                                                <!-- <th>Password</th> -->
-                                                <th>City</th>
-                                                <th>State</th>
-                                                <th>Zip</th>
-                                                <th>Phone</th>
-                                                <th>Is Available</th>
-                                                <th>Cab Number</th>
-                                                <th>Gender</th>
-                                                <th>Age</th>
-                                                <th>Experience</th>
-                                                <th>Vacancy</th>
-                                                <th>Action</th>
+                                            <th>Driver Username</th>
+                                            <th>User Username</th>
+                                            <th>Driver Phone</th>
+                                            <th>User Phone</th>
+                                            <th>Booking Type</th>
+                                            <th>Booking Amount</th>
+                                            <th>Cab Number</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>City</th>
+                                            <th>State</th>
+                                            <th>Zip</th>
+                                            <th>Vacancy</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                            <th>ID</th>
-                                            <th>Image</th>
-                                                <th>Email</th>
-                                                <th>Username</th>
-                                                <th>City</th>
-                                                <th>State</th>
-                                                <th>Zip</th>
-                                                <th>Phone</th>
-                                                <th>Is Available</th>
-                                                <th>Cab Number</th>
-                                                <th>Gender</th>
-                                                <th>Age</th>
-                                                <th>Experience</th>
-                                                <th>Vacancy</th>
-                                                <th>Action</th>
+                                            <th>Id</th>
+                                            <th>Driver Image</th>
+                                            <th>User Image</th>
+                                            <th>Driver Id</th>
+                                            <th>User Id</th>
+                                            <th>Driver Username</th>
+                                            <th>User Username</th>
+                                            <th>Driver Phone</th>
+                                            <th>User Phone</th>
+                                            <th>Booking Type</th>
+                                            <th>Booking Amount</th>
+                                            <th>Cab Number</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>City</th>
+                                            <th>State</th>
+                                            <th>Zip</th>
+                                            <th>Vacancy</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -157,7 +166,7 @@ columns: [
     "data": "null",
     "render": function(data, type, full, meta) {
 
-        var driverImage = '{{URL::asset('assets/images') }}' + '/' + full.image;
+        var driverImage = '{{URL::asset('assets/images') }}' + '/' + full.driver_image;
         if (driverImage != undefined) {
 
             return '<div class="avatar">' +
@@ -170,19 +179,39 @@ columns: [
 
     }
 },
-{ "data": "email"},
-{ "data": "userName" },
-// { "data": "password"},
-{ "data": "city" },
-{ "data": "state" },
-{ "data": "zip" },
-{ "data": "phone" },
-{ "data": "isAvailable" },
-{ "data": "cabNumber" },
-{ "data": "gender" },
-{ "data": "age" },
-{ "data": "experience" },
-{ "data": "vacancy" },
+{
+    "data": "null",
+    "render": function(data, type, full, meta) {
+
+        var driverImage = '{{URL::asset('assets/images') }}' + '/' + full.user_image;
+        if (driverImage != undefined) {
+
+            return '<div class="avatar">' +
+                '<img src="' + driverImage +
+                '" alt="user" class="avatar-img rounded-circle">' +
+                '</div>';
+        } else {
+            return "";
+        }
+
+    }
+},
+{ "data": "driverAssignedId" },
+{ "data": "bookingUserId"},
+{ "data": "driver_userName" },
+{ "data": "user_userName"},
+{ "data": "driver_phone" },
+{ "data": "user_phone"},
+{ "data": "bookingTripType"},
+{ "data": "bookingAmount"},
+{ "data": "driver_cabNumber"},
+{ "data": "bookingAddressFrom"},
+{ "data": "bookingAddressTo"},
+{ "data": "bookingCity" },
+{ "data": "bookingState" },
+{ "data": "bookingZip" },
+{ "data": "driver_vacancy" },
+{ "data": "date" },
 { "data": "null", 
 "render": function ( data, type, full, meta ) { 
     var url = '{{ url("/admin/user/edit", "id") }}';
