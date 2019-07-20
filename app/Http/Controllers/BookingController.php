@@ -66,6 +66,9 @@ class BookingController extends Controller
     }
 
     public function deleteBooking(Request $request, $id){
+        $row = DB::table('bookings')->where('id', '=', $id)->first();
+        // return $row->driverAssignedId;
+        $usrDel = DB::table('users')->where('id', $row->driverAssignedId)->update(['isAvailable' => 'available']);
         $deleted = DB::table('bookings')->where('id', '=', $id)->delete();
         // return $deleted;
         if($deleted){

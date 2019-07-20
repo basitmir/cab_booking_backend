@@ -23,27 +23,34 @@
                     <div class="row">
                     <div class="col-sm">
                                 <div class="row justify-content-md-center">
-                                    <div class="col-md-4 form-group">
+                                    <div class="col-md-3 form-group">
                                         <label for="email" class="colored label-required">Email</label>
                                         <input class="form-control validate-required" id="email" placeholder="Email" value=""
                                                type="email">
                                         <small class="form-text text-danger d-none" id="emailHelp">Email is required</small>
 
                                     </div>
-                                    <div class="col-md-4 form-group">
+                                    <div class="col-md-3 form-group">
                                         <label for="UserName" class="colored label-required">User Name</label>
                                         <input class="form-control validate-required" id="userName" placeholder="User Name" value=""
                                                type="text">
                                         <small class="form-text text-danger d-none" id="userNameHelp">User Name is required</small>
 
                                     </div>
-                                    <div class="col-md-4 form-group">
+                                    <div class="col-md-3 form-group">
                                         <label for="password" class="colored label-required">Password</label>
                                         <input class="form-control validate-required" id="password" placeholder="Password" value="" type="password">
                                         <small class="form-text text-danger d-none" id="passwordHelp">Password is required</small>
                                     </div>
-
-
+                                    <div class="col-md-3 form-group">
+                                                <label for="isavailable" class="colored label-required">Is Available</label>
+                                                <select class="form-control validate-required custom-select d-block w-100" id="isavailable">
+                                                    <!-- <option value="">Choos</option> -->
+                                                    <option value="male">available</option>
+                                                    <option value="female">not-available</option>
+                                                </select>
+                                            </div>
+                                            <small class="form-text text-danger d-none" id="isavailableHelp">Is Available is required</small>
                                 </div>
                                 <div class="row justify-content-md-center">
                                     <div class="col-md-4 form-group">
@@ -277,6 +284,7 @@
                 // $('#gender').val(jsonData.age);
                 // console.log(jsonData.gender)
                 $('#gender').val(jsonData.gender);
+                $('#gender').val(jsonData.isavailable);
                 // document.getElementById('gender').value = jsonData.gender
                 $('#vacancy').val(jsonData.vacancy);
                 // $('#file').val(jsonData.image);
@@ -333,6 +341,7 @@
         form_data.append('experience', $('#experience').val());
         form_data.append('cabNumber', $('#cabNumber').val());
         form_data.append('gender', $('#gender').val());
+        form_data.append('gender', $('#isavailable').val());
         form_data.append('vacancy', $('#vacancy').val());
         form_data.append('address', $('#address').val());
         

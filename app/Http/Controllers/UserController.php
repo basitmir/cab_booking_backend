@@ -180,7 +180,7 @@ class UserController extends Controller
                     'image' => $name,
                     'userName' => $request->userName,
                     'email' => $request->email,
-                    'password' => $request->password,
+                    'password' => bcrypt($request->password),
                     'phone' => $request->phone,
                     'city' => $request->city,
                     'state' => $request->state,
@@ -199,7 +199,7 @@ class UserController extends Controller
                 [
                     'userName' => $request->userName,
                     'email' => $request->email,
-                    'password' => $request->password,
+                    'password' => bcrypt($request->password),
                     'phone' => $request->phone,
                     'city' => $request->city,
                     'state' => $request->state,
