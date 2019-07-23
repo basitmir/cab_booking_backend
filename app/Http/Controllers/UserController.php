@@ -192,6 +192,7 @@ class UserController extends Controller
                     'age' => $request->age,
                     'vacancy' => $request->vacancy,
                     'gender' => $request->gender,
+                    'isAvailable'=>$request->isAvailable,
                 ]);
         }else{
             // return "fafafaa";
@@ -211,6 +212,7 @@ class UserController extends Controller
                     'age' => $request->age,
                     'vacancy' => $request->vacancy,
                     'gender' => $request->gender,
+                    'isAvailable'=>$request->isAvailable,
                 ]);
                 $update=true;
         }
