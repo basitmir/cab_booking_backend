@@ -49,8 +49,8 @@ class BookingController extends Controller
                 // 'bookingCountry'=>$request->bookingCountry,
             ]
         );
-       
-        DB::table('users')->where('id',$request->driverAssignedId)->update(['isAvailable' => 'not-available']);
+        
+        DB::table('users')->where('id',$request->driverAssignId)->update(['isAvailable' => 'not-available']);
         if ($booking) {
             $document = [
                 "result"=>"success",
