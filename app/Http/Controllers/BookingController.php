@@ -20,7 +20,6 @@ class BookingController extends Controller
     public function addBooking(Request $request){
         // return $request;
         $response = DB::table('users')->where('id','=',$request->driverAssignId)->first();
-       
         if($response->isAvailable=="not-available"){
             return response()->json(['error'=> 
                 [
@@ -29,7 +28,6 @@ class BookingController extends Controller
                 ]
             ], 403)->header('Content-Type', 'application/json');
         }
-       
         $booking=DB::table('bookings')->insert(
             [   
                 'bookingUserId'=> $request->bookingUserId,
@@ -49,7 +47,7 @@ class BookingController extends Controller
                 // 'bookingCountry'=>$request->bookingCountry,
             ]
         );
-        
+       
         DB::table('users')->where('id',$request->driverAssignId)->update(['isAvailable' => 'not-available']);
         if ($booking) {
             $document = [
@@ -68,6 +66,9 @@ class BookingController extends Controller
     }
 
     public function deleteBooking(Request $request, $id){
+        $row = DB::table('bookings')->where('id', '=', $id)->first();
+        // return $row->driverAssignedId;
+        $usrDel = DB::table('users')->where('id', $row->driverAssigId)->update(['isAvailable' => 'available']);
         $deleted = DB::table('bookings')->where('id', '=', $id)->delete();
         // return $deleted;
         if($deleted){
@@ -85,11 +86,28 @@ class BookingController extends Controller
         }
         return response()->json($document,200);
     }
-    public function editBooking(){
+    public function editBooking($id){
         
     }
 
     public function getBooking($id){
+            // return DB::table('bookings')
+            // ->join('users', 'bookings.bookingUserId', '=', 'users.id')
+            // ->select('bookings.*', 'users.userName', 'users.cabNumber')
+            // ->where('bookingUserId','=',$id)
+            // ->get();
+
+        $bookings = DB::table('bookings as book')
+        ->Join('users as au', 'book.driverAssignedId', '=', 'au.id')
+        ->Join('users as cu', 'book.bookingUserId', '=', 'cu.id')
+        ->select('book.*','au.cabNumber as driver_cabNumber','cu.userName as user_userName')
+        ->where('bookingUserId','=',$id)
+        ->get();
+        return $bookings;
+        
+    }
+    
+    public function getUserSingleBooking($id){
         $booking= DB::table('bookings')->where('bookingUserId','=',$id)->get();
         return $booking;
     }
