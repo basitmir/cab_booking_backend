@@ -48,6 +48,7 @@
                                             <th>State</th>
                                             <th>Zip</th>
                                             <th>Vacancy</th>
+                                            <th>Status</th>
                                             <th>Date</th>
                                             <th>Action</th>
                                             </tr>
@@ -74,6 +75,7 @@
                                             <th>State</th>
                                             <th>Zip</th>
                                             <th>Vacancy</th>
+                                            <th>Status</th>
                                             <th>Date</th>
                                             <th>Action</th>
                                             </tr>
@@ -211,6 +213,7 @@ columns: [
 { "data": "bookingState" },
 { "data": "bookingZip" },
 { "data": "driver_vacancy" },
+{ "data": "status" },
 { "data": "date" },
 { "data": "null", 
 "render": function ( data, type, full, meta ) { 

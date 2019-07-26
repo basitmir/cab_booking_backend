@@ -180,7 +180,7 @@ class UserController extends Controller
                     'image' => $name,
                     'userName' => $request->userName,
                     'email' => $request->email,
-                    'password' => $request->password,
+                    'password' => bcrypt($request->password),
                     'phone' => $request->phone,
                     'city' => $request->city,
                     'state' => $request->state,
@@ -192,6 +192,7 @@ class UserController extends Controller
                     'age' => $request->age,
                     'vacancy' => $request->vacancy,
                     'gender' => $request->gender,
+                    'isAvailable'=>$request->isAvailable,
                 ]);
         }else{
             // return "fafafaa";
@@ -199,7 +200,7 @@ class UserController extends Controller
                 [
                     'userName' => $request->userName,
                     'email' => $request->email,
-                    'password' => $request->password,
+                    'password' => bcrypt($request->password),
                     'phone' => $request->phone,
                     'city' => $request->city,
                     'state' => $request->state,
@@ -211,6 +212,7 @@ class UserController extends Controller
                     'age' => $request->age,
                     'vacancy' => $request->vacancy,
                     'gender' => $request->gender,
+                    'isAvailable'=>$request->isAvailable,
                 ]);
                 $update=true;
         }
