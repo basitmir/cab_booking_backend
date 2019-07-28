@@ -50,8 +50,8 @@
                                     <label for="lastName" class="colored label-required">Phone</label>
                                     <input class="form-control validate-required" id="phone" placeholder="Phone" value="" type="number">
                                     <small class="form-text text-danger d-none" id="phoneHelp">Number is required</small>
-
                                 </div>
+
                                 <div class="col-md-4 form-group">
                                     <label for="lastName" class="colored label-required">City</label>
                                     <input class="form-control validate-required" id="city" placeholder="City" value="" type="text">
@@ -272,7 +272,6 @@
         country=$('#country').val();
         address=$('#address').val();
         address2=$('#address2').val();
-                console.log("hhadasdasdhhhh");
 
         $.ajax({
             url: url,

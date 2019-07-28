@@ -45,9 +45,10 @@ Route::get('admin/booking/edit/{id}', function ($id) {
 Route::get('admin/user', function () {
     return View::make('admin.user.index')->with('title', 'Users');
 });
-Route::get('admin/user/create', function () {
-    return View::make('admin.user.show')->with('title', 'Users');
-});
+
+//Route::get('admin/user/create', function () {
+//    return View::make('admin.user.show')->with('title', 'Users');
+//});
 Route::get('admin/user/edit/{id}', function ($id) {
     return View::make('admin.user.edit', ['id'=>$id])->with('title', 'Users');
 });

@@ -4,8 +4,8 @@
 <!-- Favicon -->
 <!-- <link rel="shortcut icon" href="favicon.ico">
 <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
-<link rel="shortcut icon" href="{{ asset('distweb/img/favicon.jpg')}}">
-<link rel="icon" href="{{ asset('distweb/img/favicon.jpg')}}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ asset('dist/img/logo.png')}}">
+<link rel="icon" href="{{ asset('dist/img/logo.png')}}" type="image/x-icon">
 
 
 <!-- Custom CSS -->

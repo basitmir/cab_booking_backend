@@ -4,8 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>Admin | {{$title}}</title>
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{ asset('distweb/img/favicon.jpg')}}">
-<link rel="icon" href="{{ asset('distweb/img/favicon.jpg')}}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ asset('dist/img/logo.png')}}">
+<link rel="icon" href="{{ asset('dist/img/logo.png')}}" type="image/x-icon">
 
 <!-- vector map CSS -->
 <link href="{{ asset('vendors/vectormap/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet" type="text/css" />

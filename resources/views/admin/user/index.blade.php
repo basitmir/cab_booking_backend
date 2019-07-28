@@ -41,7 +41,7 @@
                                                 <th>State</th>
                                                 <th>Zip</th>
                                                 <th>Phone</th>
-                                                <!-- <th>Is Available</th> -->
+                                                <th>Country</th>
                                                 <!-- <th>Cab Number</th> -->
                                                 <!-- <th>Gender</th> -->
                                                 <!-- <th>Age</th> -->
@@ -63,7 +63,7 @@
                                                 <th>State</th>
                                                 <th>Zip</th>
                                                 <th>Phone</th>
-                                                <!-- <th>Is Available</th> -->
+                                                <th>Country</th>
                                                 <!-- <th>Cab Number</th> -->
                                                 <!-- <th>Gender</th> -->
                                                 <!-- <th>Age</th>
@@ -181,7 +181,7 @@ columns: [
 { "data": "state" },
 { "data": "zip" },
 { "data": "phone" },
-// { "data": "isAvailable" },
+{ "data": "country" },
 // { "data": "cabNumber" },
 // { "data": "gender" },
 // { "data": "age" },

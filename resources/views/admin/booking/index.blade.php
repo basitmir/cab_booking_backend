@@ -217,7 +217,7 @@ columns: [
 { "data": "date" },
 { "data": "null", 
 "render": function ( data, type, full, meta ) { 
-    var url = '{{ url("/admin/user/edit", "id") }}';
+    var url = '{{ url("/admin/booking/edit", "id") }}';
     url = url.replace('id', full.id);
     return '<div class="d-flex">'+
                 '<a href="' + url + '" class="text-primary mr-15 fa fa-edit mt-1 "></a>' +

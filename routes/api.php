@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('adminlogout', 'AuthController@adminLogout');
 });
 
-Route::apiResource('getUser','UserController');
+
 
 
 // Driver apis
@@ -45,7 +45,8 @@ Route::post('editDriver/{id}','UserController@editDriver');
 // User apis
 Route::get('getAllUsers','UserController@getAllUsers');
 Route::delete('deleteUser/{id}','UserController@deleteUser');
-Route::put('editUser/{id}','UserController@editUser');
+Route::post('editUser/{id}','UserController@editUser');
+Route::get('getUser/{id}','UserController@getUser');
 
 //Bookings api
 Route::get('getAllBookings','BookingController@getAllBookings');

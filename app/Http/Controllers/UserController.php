@@ -258,7 +258,68 @@ class UserController extends Controller
     }
 
     public function getDriver($id){
-        $booking= DB::table('users')->where('id','=',$id)->get();
-        return $booking;
+        $driver = DB::table('users')->where('id','=',$id)->get();
+        return $driver;
+    }
+    public function editUser(Request $request, $id){
+        if($request->hasFile('file')){
+            $photo = $request->file('file');
+            $name = time().'.'.$photo->getClientOriginalExtension();
+            $destinationPath = 'assets/images';
+            $photo->move($destinationPath, $name);
+
+            $updated = DB::table('users')->where('id',$id)->update(
+                [
+                    'image' => $name,
+                    'userName' => $request->userName,
+                    'email' => $request->email,
+                    'phone' => $request->phone,
+                    'city' => $request->city,
+                    'state' => $request->state,
+                    'zip' => $request->zip,
+                    'country' => $request->country,
+                    'address' => $request->address,
+                ]);
+        }else{
+            // return "fafafaa";
+            $updated = DB::table('users')->where('id',$id)->update(
+                [
+                    'userName' => $request->userName,
+                    'email' => $request->email,
+                    'phone' => $request->phone,
+                    'city' => $request->city,
+                    'state' => $request->state,
+                    'zip' => $request->zip,
+                    'country' => $request->country,
+                    'address' => $request->address,
+                ]);
+            $update=true;
+        }
+        if($updated==0 && $update==true){
+            $document = [
+                "result"=>"success",
+                "message"=>"Record updated successfully",
+                "title"=>"Success",
+            ];
+        }elseif($updated){
+            $document = [
+                "result"=>"success",
+                "message"=>"Record updated successfully",
+                "title"=>"Success",
+            ];
+        }else{
+            $document = [
+                "result"=>"error",
+                "message"=>"Record update Failed!",
+                "title"=>"Error",
+            ];
+        }
+        return response()->json($document,200);
+    }
+
+    public function getUser($id){
+        $user= DB::table('users')->where('id','=',$id)->get();
+        return $user;
     }
 }
+

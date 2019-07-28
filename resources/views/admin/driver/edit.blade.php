@@ -345,7 +345,7 @@
         form_data.append('isAvailable', $('#isavailable').val());
         form_data.append('vacancy', $('#vacancy').val());
         form_data.append('address', $('#address').val());
-        
+
         $.ajax({
             url: url,
             cache: false,

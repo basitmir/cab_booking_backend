@@ -90,17 +90,12 @@ class BookingController extends Controller
         }
         return response()->json($document, 200);
     }
-    public function editBooking($id)
-    { }
+    public function editBooking(Request $request){
+
+    }
 
     public function getBooking($id)
     {
-        // return DB::table('bookings')
-        // ->join('users', 'bookings.bookingUserId', '=', 'users.id')
-        // ->select('bookings.*', 'users.userName', 'users.cabNumber')
-        // ->where('bookingUserId','=',$id)
-        // ->get();
-
         $bookings = DB::table('bookings as book')
             ->Join('users as au', 'book.driverAssignedId', '=', 'au.id')
             ->Join('users as cu', 'book.bookingUserId', '=', 'cu.id')

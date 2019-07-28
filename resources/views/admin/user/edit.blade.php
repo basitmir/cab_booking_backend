@@ -23,22 +23,37 @@
                     <div class="row">
                         <div class="col-sm">
                             <div class="row justify-content-md-center">
-                                <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">First Name</label>
-                                    <input class="form-control validate-required" id="firstName" placeholder="First Name" value=""
-                                        type="text">
-                                        <small class="form-text text-danger d-none" id="firstNameHelp">Product Name is required</small>
-
+                                <div class="form-group col-md-4">
+                                    <label for="mainimg" class="colored">Main Image</label>
+                                    <div class="fileinput fileinput-new input-group" id="mainimg" data-provides="fileinput">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="form-control text-truncate" data-trigger="fileinput"><i
+                                                    class="glyphicon glyphicon-file fileinput-exists"></i> <span
+                                                    class="fileinput-filename"></span></div>
+                                        <span class="input-group-append">
+                                            <span class=" btn btn-primary btn-file"><span class="fileinput-new">Select
+                                                    file</span><span class="fileinput-exists">Change</span>
+                                                <input type="file" name="file" id="file" required
+                                                       class="">
+                                            </span>
+                                            <a href="#" class="btn btn-secondary fileinput-exists"
+                                               data-dismiss="fileinput">Remove</a>
+                                        </span>
+                                    </div>
+                                    <small class="form-text text-danger d-none" id="fileHelp">Image is required</small>
                                 </div>
                                 <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">Last Name</label>
-                                    <input class="form-control validate-required" id="lastName" placeholder="Last Name" value=""
+                                    <label for="userName" class="colored label-required">User Name</label>
+                                    <input class="form-control validate-required" id="userName" placeholder="First Name" value=""
                                         type="text">
-                                        <small class="form-text text-danger d-none" id="lastNameHelp">Last Name is required</small>
+                                        <small class="form-text text-danger d-none" id="userNameHelp">User Name is required</small>
 
                                 </div>
+
                                 <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">Email</label>
+                                    <label for="email" class="colored label-required">Email</label>
                                     <input class="form-control validate-required" id="email" placeholder="Email" value="" type="email">
                                      <small class="form-text text-danger d-none" id="emailHelp">Email is required</small>
                                 </div>
@@ -47,19 +62,19 @@
                             </div>
                             <div class="row justify-content-md-center">
                                 <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">Phone</label>
+                                    <label for="phone" class="colored label-required">Phone</label>
                                     <input class="form-control validate-required" id="phone" placeholder="Phone" value="" type="number">
                                     <small class="form-text text-danger d-none" id="phoneHelp">Number is required</small>
 
                                 </div>
                                 <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">City</label>
+                                    <label for="city" class="colored label-required">City</label>
                                     <input class="form-control validate-required" id="city" placeholder="City" value="" type="text">
                                     <small class="form-text text-danger d-none" id="cityHelp">City Name is required</small>
 
                                 </div>
                                 <div class="col-md-4 form-group">
-                                    <label for="lastName" class="colored label-required">State</label>
+                                    <label for="state" class="colored label-required">State</label>
                                     <input class="form-control validate-required" id="state" placeholder="State" value="" type="text">
                                     <small class="form-text text-danger d-none" id="stateHelp">State is required</small>
 
@@ -67,14 +82,14 @@
                             </div>
                             <div class="row justify-content-md-center">
                                 <div class="col-md-6 form-group">
-                                    <label for="lastName" class="colored label-required">Zip</label>
+                                    <label for="zip" class="colored label-required">Zip</label>
                                     <input class="form-control validate-required" id="zip" placeholder="Zip" value="" type="number">
                                     <small class="form-text text-danger d-none" id="zipHelp">Zip is required</small>
 
                                 </div>
 
                                 <div class="col-md-6 form-group">
-                                    <label for="lastName" class="colored label-required">Country</label>
+                                    <label for="country" class="colored label-required">Country</label>
                                     <input class="form-control validate-required" id="country" placeholder="Country" value="" type="text">
                                     <small class="form-text text-danger d-none" id="countryHelp">Country is required</small>
 
@@ -82,17 +97,9 @@
                             </div>
                             <div class="row justify-content-md-center">
                                 <div class="col-md-12 form-group">
-                                    <label for="lastName" class="colored label-required">Address</label>
+                                    <label for="address" class="colored label-required">Address</label>
                                     <input class="form-control validate-required" id="address" placeholder="Address" value="" type="text">
                                     <small class="form-text text-danger d-none" id="addressHelp">Address is required</small>
-
-                                </div>
-                            </div>
-                            <div class="row justify-content-md-center">
-                                <div class="col-md-12 form-group">
-                                    <label for="lastName" class="colored label-required">Address2</label>
-                                    <input class="form-control validate-required" id="address2" placeholder="Address2" value="" type="text">
-                                    <small class="form-text text-danger d-none" id="address2Help">Address is required</small>
 
                                 </div>
                             </div>
@@ -200,12 +207,9 @@
 
     function fetchById() {
         var token =  '{{ Session::get('access_token') }}';
-        console.log("hello1");
         var id = "{!! $id !!}";
-        console.log(id);
-        var url = '{{ url("/api/user", "id") }}';
+        var url = '{{ url("/api/getUser", "id") }}';
         url = url.replace('id', id);
-        console.log(url);
         $.ajax({
             url: url,
             type: 'GET',
@@ -213,17 +217,14 @@
             headers: {"Authorization": 'Bearer ' + token},
             data: {},
             success: function(jsonData) {
-                console.log(jsonData.data);
-                $('#firstName').val(jsonData.data.firstName);
-                $('#lastName').val(jsonData.data.lastName);
-                $('#email').val(jsonData.data.email);
-                $('#phone').val(jsonData.data.phone);
-                $('#city').val(jsonData.data.city);
-                $('#state').val(jsonData.data.state);
-                $('#zip').val(jsonData.data.zip);
-                $('#country').val(jsonData.data.country);
-                $('#address').val(jsonData.data.address);
-                $('#address2').val(jsonData.data.address2);
+                $('#userName').val(jsonData[0].userName);
+                $('#email').val(jsonData[0].email);
+                $('#phone').val(jsonData[0].phone);
+                $('#city').val(jsonData[0].city);
+                $('#state').val(jsonData[0].state);
+                $('#zip').val(jsonData[0].zip);
+                $('#country').val(jsonData[0].country);
+                $('#address').val(jsonData[0].address);
             }
         });
     }
@@ -259,39 +260,31 @@
 
 
         var id = "{!! $id !!}";
-        var url = '{{ url("/api/user", "id") }}';
+        var url = '{{ url("/api/editUser", "id") }}';
         url = url.replace('id', id);
-        console.log("hhhhhh");
-        firstName=$('#firstName').val();
-        lastName=$('#lastName').val();
-        email=$('#email').val();
-        phone=$('#phone').val();
-        city=$('#city').val();
-        state=$('#state').val();
-        zip=$('#zip').val();
-        country=$('#country').val();
-        address=$('#address').val();
-        address2=$('#address2').val();
-                console.log("hhadasdasdhhhh");
+
+        var userImage = $('#file').prop('files')[0];
+        var form_data = new FormData();
+        form_data.append('file', userImage);
+        form_data.append('userName', $('#userName').val());
+        form_data.append('email', $('#email').val());
+        form_data.append('phone', $('#phone').val());
+        form_data.append('city', $('#city').val());
+        form_data.append('zip', $('#zip').val());
+        form_data.append('country', $('#country').val());
+        form_data.append('state', $('#state').val());
+        form_data.append('address', $('#address').val());
 
         $.ajax({
             url: url,
+            cache: false,
+            contentType: false,
+            processData: false,
             type: 'POST',
             dataType: 'JSON',
             headers: {"Authorization": 'Bearer ' + token},
-            data: {
-               firstName: firstName,
-                lastName: lastName,
-                email: email,
-                phone: phone,
-                city: city,
-                state: state,
-                zip: zip,
-                country: country,
-                address: address,
-                address2: address2,
-                '_method': 'PUT'
-            },
+            data: form_data,
+
             success: function(data) {
                 console.log(data);
                 switch (data['result']) {
