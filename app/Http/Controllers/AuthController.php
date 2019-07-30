@@ -87,6 +87,7 @@ class AuthController extends Controller
         $info = [
             'id' => $user->id,
             'userName'=> $user->userName,
+            'whichUser'=>$user->whichUser,
             'email'=> $user->email,
             'token'=> $data['access_token'],
             'message'=>'Successfull Login',

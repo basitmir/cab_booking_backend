@@ -111,7 +111,7 @@ class UserController extends Controller
         $destinationPath = 'assets/images';
         $photo->move($destinationPath, $name);
         
-
+ 
         $driver=DB::table('users')->insert(
             [   
                 'image'=> $name,
