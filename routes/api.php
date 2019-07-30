@@ -54,3 +54,4 @@ Route::post('addBooking','BookingController@addBooking');
 Route::delete('deleteBooking/{id}','BookingController@deleteBooking');
 Route::put('editBooking/{id}','BookingController@editBooking');
 Route::get('getBooking/{id}','BookingController@getBooking');
+Route::get('getDriverBookings/{id}','BookingController@getDriverBookings');

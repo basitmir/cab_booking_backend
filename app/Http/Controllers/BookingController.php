@@ -110,4 +110,15 @@ class BookingController extends Controller
         $booking = DB::table('bookings')->where('bookingUserId', '=', $id)->get();
         return $booking;
     }
+    
+    public function getDriverBookings($id)
+    {
+        $bookings = DB::table('bookings as book')
+            ->Join('users as au', 'book.driverAssignedId', '=', 'au.id')
+            ->Join('users as cu', 'book.bookingUserId', '=', 'cu.id')
+            ->select('book.*', 'au.cabNumber as driver_cabNumber','au.userName as driver_name', 'cu.userName as user_userName')
+            ->where('driverAssignedId', '=', $id)
+            ->get();
+        return $bookings;
+    }
 }

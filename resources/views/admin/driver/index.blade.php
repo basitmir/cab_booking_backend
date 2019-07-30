@@ -44,6 +44,7 @@
                                                 <th>Gender</th>
                                                 <th>Age</th>
                                                 <th>Experience</th>
+                                                <th>Current Location</th>
                                                 <th>Vacancy</th>
                                                 <th>Address</th>
                                                 <th>Action</th>
@@ -66,6 +67,7 @@
                                                 <th>Gender</th>
                                                 <th>Age</th>
                                                 <th>Experience</th>
+                                                <th>Current Location</th>
                                                 <th>Vacancy</th>
                                                 <th>Address</th>
                                                 <th>Action</th>
@@ -183,6 +185,7 @@ columns: [
 { "data": "gender" },
 { "data": "age" },
 { "data": "experience" },
+{ "data": "currentLocation" },
 { "data": "vacancy" },
 { "data": "address" },
 { "data": "null", 

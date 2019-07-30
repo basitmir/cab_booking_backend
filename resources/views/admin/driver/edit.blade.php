@@ -79,13 +79,13 @@
                                         <small class="form-text text-danger d-none" id="zipHelp">Zip is required</small>
 
                                     </div>
-
                                     <div class="col-md-4 form-group">
-                                        <label for="lastName" class="colored label-required">Country</label>
-                                        <input class="form-control validate-required" id="country" placeholder="Country" value="" type="text">
-                                        <small class="form-text text-danger d-none" id="countryHelp">Country is required</small>
+                                        <label for="currentLocation" class="colored ">Current Location</label>
+                                        <input class="form-control" id="currentLocation" placeholder="Current Location" value="" type="text">
+                                        <!-- <small class="form-text text-danger d-none" id="countryHelp">C is required</small> -->
 
                                     </div>
+                                    
                                     <div class="form-group col-md-4">
                                     <label for="mainimg" class="colored">Main Image</label>
                                     <div class="fileinput fileinput-new input-group" id="mainimg" data-provides="fileinput">
@@ -276,7 +276,7 @@
                 $('#city').val(jsonData.city);
                 $('#state').val(jsonData.state);
                 $('#zip').val(jsonData.zip);
-                $('#country').val(jsonData.country);
+                $('#currentLocation').val(jsonData.currentLocation);
                 $('#address').val(jsonData.address);
                 $('#cabNumber').val(jsonData.cabNumber);
                 $('#experience').val(jsonData.experience);
@@ -336,7 +336,7 @@
         form_data.append('phone', $('#phone').val());
         form_data.append('city', $('#city').val());
         form_data.append('zip', $('#zip').val());
-        form_data.append('country', $('#country').val());
+        form_data.append('currentLocation', $('#currentLocation').val());
         form_data.append('state', $('#state').val());
         form_data.append('age', $('#age').val());
         form_data.append('experience', $('#experience').val());
