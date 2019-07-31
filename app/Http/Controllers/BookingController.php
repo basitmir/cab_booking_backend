@@ -51,7 +51,7 @@ class BookingController extends Controller
             ]
         );
 
-        DB::table('users')->where('id', $request->driverAssignId)->update(['isAvailable' => 'not-available']);
+        DB::table('users')->where('id', $request->driverAssignId)->update(['isAvailable' => 'not-available','updated_at' => DB::raw('CURRENT_TIMESTAMP')]);
         if ($booking) {
             $document = [
                 "result" => "success",
@@ -72,7 +72,7 @@ class BookingController extends Controller
     {
         $row = DB::table('bookings')->where('id', '=', $id)->first();
         // return $row->driverAssignedId;
-        $usrDel = DB::table('users')->where('id', $row->driverAssigId)->update(['isAvailable' => 'available']);
+        $usrDel = DB::table('users')->where('id', $row->driverAssigId)->update(['isAvailable' => 'available', 'updated_at'=>DB::raw('CURRENT_TIMESTAMP')]);
         $deleted = DB::table('bookings')->where('id', '=', $id)->delete();
         // return $deleted;
         if ($deleted) {
@@ -101,6 +101,7 @@ class BookingController extends Controller
             ->Join('users as cu', 'book.bookingUserId', '=', 'cu.id')
             ->select('book.*', 'au.cabNumber as driver_cabNumber','au.userName as driver_name', 'cu.userName as user_userName')
             ->where('bookingUserId', '=', $id)
+            ->orderBy('created_at', 'DESC')
             ->get();
         return $bookings;
     }
@@ -118,14 +119,15 @@ class BookingController extends Controller
             ->Join('users as cu', 'book.bookingUserId', '=', 'cu.id')
             ->select('book.*', 'au.cabNumber as driver_cabNumber','au.userName as driver_name', 'cu.userName as user_userName')
             ->where('driverAssignedId', '=', $id)
+            ->orderBy('created_at', 'DESC')
             ->get();
         return $bookings;
     }
 
     public function updateBooking(Request $request){
-        $bookingUpdate = DB::table('bookings')->where('id', $request->bookingId)->update(['status' => 'complete']);
+        $bookingUpdate = DB::table('bookings')->where('id', $request->bookingId)->update(['status' => 'complete','updated_at' => DB::raw('CURRENT_TIMESTAMP')]);
         if($bookingUpdate){
-            $userUpdate = DB::table('users')->where('id', $request->driverId)->update(['isAvailable' => 'available','currentLocation' => $request->currentLocation,]);
+            $userUpdate = DB::table('users')->where('id', $request->driverId)->update(['isAvailable' => 'available','currentLocation' => $request->currentLocation,'updated_at' => DB::raw('CURRENT_TIMESTAMP')]);
         }
         if(isset($userUpdate)){
             return response()->json(

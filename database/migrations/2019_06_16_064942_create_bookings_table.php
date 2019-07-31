@@ -36,7 +36,8 @@ class CreateBookingsTable extends Migration
             $table->string('bookingPaymentStatus', 100)->nullable();
             $table->tinyinteger('bookingShipped')->nullable();
             $table->string('bookingTrackingNumber', 80)->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
     
