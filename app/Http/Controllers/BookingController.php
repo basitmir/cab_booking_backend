@@ -121,4 +121,26 @@ class BookingController extends Controller
             ->get();
         return $bookings;
     }
+
+    public function updateBooking(Request $request){
+        $bookingUpdate = DB::table('bookings')->where('id', $request->bookingId)->update(['status' => 'complete']);
+        if($bookingUpdate){
+            $userUpdate = DB::table('users')->where('id', $request->driverId)->update(['isAvailable' => 'available','currentLocation' => $request->currentLocation,]);
+        }
+        if(isset($userUpdate)){
+            return response()->json(
+                [
+                    "result" => "Success",
+                    "message" => "Bookings updated Successfully!",
+                    "title" => "Success",
+                ], 403)->header('Content-Type', 'application/json');
+        }else{
+            return response()->json(
+                [
+                    "result" => "error",
+                    "message" => "Booking update Failed!",
+                    "title" => "Error",
+                ], 403)->header('Content-Type', 'application/json');
+        }
+    }
 }
