@@ -133,7 +133,7 @@ class BookingController extends Controller
                     "result" => "Success",
                     "message" => "Bookings updated Successfully!",
                     "title" => "Success",
-                ], 403)->header('Content-Type', 'application/json');
+                ], 200)->header('Content-Type', 'application/json');
         }else{
             return response()->json(
                 [
