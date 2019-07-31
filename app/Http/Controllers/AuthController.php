@@ -96,6 +96,47 @@ class AuthController extends Controller
         return $info;
     }
 
+    public function driverLogin(Request $request){ 
+        $info =[];
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+          ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        } 
+        $request->request->add(['whichUser' => 'driver']); 
+        $credentials = request(['email', 'password', 'whichUser']);
+        $credentials['deleted_at'] = null;
+
+        if(!Auth::attempt($credentials))
+            return response()->json([
+                'message' => 'Invalid Login Credentials',
+                'error'=>true,
+            ], 401);
+             
+        $user = $request->user();
+        $tokenResult = $user->createToken('Personal Access Token');
+        $token = $tokenResult->token;
+        if ($request->remember_me)
+            $token->expires_at = Carbon::now()->addWeeks(1);
+        $token->save();
+        $token = $this->respondWithToken($tokenResult);
+        $data = json_decode($token->getContent(), true);
+        $user=Auth::user();
+        
+        $info = [
+            'id' => $user->id,
+            'userName'=> $user->userName,
+            'whichUser'=>$user->whichUser,
+            'email'=> $user->email,
+            'token'=> $data['access_token'],
+            'message'=>'Successfull Login',
+            'error'=>false,
+        ];
+        return $info;
+    }
     /** 
     * Register api 
     * 

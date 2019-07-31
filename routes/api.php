@@ -25,6 +25,8 @@ Route::post('adminregister', 'AuthController@adminRegister');
 Route::post('userlogin', 'AuthController@userLogin');
 Route::post('userregister', 'AuthController@userRegister');
 
+Route::post('driverlogin', 'AuthController@driverLogin');
+
 
 Route::group(['middleware' => 'auth:api'], function(){
     Route::post('details', 'AuthController@details');
