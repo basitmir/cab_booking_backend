@@ -32,12 +32,13 @@ class CreateUsersTable extends Migration
             $table->string('address',100)->nullable();
             $table->string('address2',50)->nullable();
             $table->string('cabNumber',50)->nullable();
-            $table->string('currentLocation',50)->nullable();
+            $table->string('currentLocation',300)->nullable();
             $table->UnsignedInteger('age')->nullable();
             $table->float('experience')->nullable();
             $table->string('gender',50)->nullable();
             $table->UnsignedInteger('vacancy')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->softDeletes();
         });
     }

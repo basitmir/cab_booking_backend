@@ -100,7 +100,9 @@ class UserController extends Controller
     public function getAvailableDrivers(){
         $availableDrivers = DB::table('users')
             ->where('whichUser','=','driver')
-            ->where('isAvailable','=','available')->get();
+            ->where('isAvailable','=','available')
+            ->orderBy('updated_at', 'DESC')
+            ->get();
         return $availableDrivers;
     }
 
