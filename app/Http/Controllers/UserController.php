@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Resources\User as UserResources;
-use DB;
+use DB; 
 
 class UserController extends Controller
 {
@@ -107,16 +107,18 @@ class UserController extends Controller
     }
 
     public function addDriver(Request $request){
-        // return $request;
-        $photo = $request->file('file');
-        $name = time().'.'.$photo->getClientOriginalExtension();
-        $destinationPath = 'assets/images';
-        $photo->move($destinationPath, $name);
         
+        // $photo = $request->file('file');
+        // $name = time().'.'.$photo->getClientOriginalExtension();
+        // $destinationPath = 'assets/images';
+        // $photo->move($destinationPath, $name);
+        $image = $request->file('image');
+        $new_image_name =rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'),$new_image_name);
  
         $driver=DB::table('users')->insert(
             [   
-                'image'=> $name,
+                'image'=> $new_image_name,
                 'password'=> bcrypt($request->password),
                 'email' => $request->email,
                 'phone'=> $request->phone,
@@ -170,16 +172,20 @@ class UserController extends Controller
     }
     public function editDriver(Request $request, $id){
         // return $request;
-        if($request->hasFile('file')){
+        if($request->hasFile('image')){
             // return "ASdasasf";
-            $photo = $request->file('file');
-            $name = time().'.'.$photo->getClientOriginalExtension();
-            $destinationPath = 'assets/images';
-            $photo->move($destinationPath, $name);
+            // $photo = $request->file('file');
+            // $name = time().'.'.$photo->getClientOriginalExtension();
+            // $destinationPath = 'assets/images';
+            // $photo->move($destinationPath, $name);
+
+            $image = $request->file('image');
+            $new_image_name =rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'),$new_image_name);
 
             $updated = DB::table('users')->where('id',$id)->update(
                 [
-                    'image' => $name,
+                    'image' => $new_image_name,
                     'userName' => $request->userName,
                     'email' => $request->email,
                     'password' => bcrypt($request->password),

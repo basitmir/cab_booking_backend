@@ -98,7 +98,7 @@
                                         <span class="input-group-append">
                                             <span class=" btn btn-primary btn-file"><span class="fileinput-new">Select
                                                     file</span><span class="fileinput-exists">Change</span>
-                                                <input type="file" name="file" id="file" required
+                                                <input type="file" name="image" id="image" required
                                                     class="">
                                             </span>
                                             <a href="#" class="btn btn-secondary fileinput-exists"
@@ -327,9 +327,9 @@
         var url = '{{ url("/api/editDriver", "id") }}';
         url = url.replace('id', id);
 
-        var driverImage = $('#file').prop('files')[0];
+        var driverImage = $('#image').prop('files')[0];
         var form_data = new FormData();
-        form_data.append('file', driverImage);
+        form_data.append('image', driverImage);
         form_data.append('userName', $('#userName').val());
         form_data.append('password', $('#password').val());
         form_data.append('email', $('#email').val());

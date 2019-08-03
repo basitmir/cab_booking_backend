@@ -157,21 +157,28 @@ function fetchDrivers(){
 columns: [
 { "data": "id" },
 {
-    "data": "null",
-    "render": function(data, type, full, meta) {
+    // "data": "null",
+    // "render": function(data, type, full, meta) {
 
-        var driverImage = '{{URL::asset('assets/images') }}' + '/' + full.image;
-        if (driverImage != undefined) {
+    //     var driverImage = '{{URL::asset('assets/images') }}' + '/' + full.image;
+    //     if (driverImage != undefined) {
 
-            return '<div class="avatar">' +
-                '<img src="' + driverImage +
-                '" alt="user" class="avatar-img rounded-circle">' +
-                '</div>';
-        } else {
-            return "";
-        }
+    //         return '<div class="avatar">' +
+    //             '<img src="' + driverImage +
+    //             '" alt="user" class="avatar-img rounded-circle">' +
+    //             '</div>';
+    //     } else {
+    //         return "";
+    //     }
 
-    }
+    // }
+
+    
+    data: 'image',
+                render: function(data, type, full, meta) {
+                    return "<img src=/images/" + data +
+                        " width= '70' class='img-thumbnail'/>";
+                }
 },
 { "data": "email"},
 { "data": "userName" },
