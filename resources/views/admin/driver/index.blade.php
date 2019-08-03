@@ -176,8 +176,10 @@ columns: [
     
     data: 'image',
                 render: function(data, type, full, meta) {
-                    return "<img src=/images/" + data +
-                        " width= '70' class='img-thumbnail'/>";
+                    return '<div class="avatar">' +
+                    "<img src=/images/" + data +
+                        " class='avatar-img rounded-circle'/>"+
+                '</div>';
                 }
 },
 { "data": "email"},
