@@ -72,7 +72,7 @@ class BookingController extends Controller
     {
         $row = DB::table('bookings')->where('id', '=', $id)->first();
         // return $row->driverAssignedId;
-        $usrDel = DB::table('users')->where('id', $row->driverAssigId)->update(['isAvailable' => 'available', 'updated_at'=>DB::raw('CURRENT_TIMESTAMP')]);
+        $usrDel = DB::table('users')->where('id', $row->driverAssigedId)->update(['isAvailable' => 'available', 'updated_at'=>DB::raw('CURRENT_TIMESTAMP')]);
         $deleted = DB::table('bookings')->where('id', '=', $id)->delete();
         // return $deleted;
         if ($deleted) {
