@@ -145,4 +145,26 @@ class BookingController extends Controller
                 ], 403)->header('Content-Type', 'application/json');
         }
     }
+
+    public function updateLocation(Request $request){
+       
+       
+            $userUpdate = DB::table('users')->where('id', $request->driverId)->update(['currentLocation' => $request->currentLocation,'updated_at' => DB::raw('CURRENT_TIMESTAMP')]);
+    
+        if(isset($userUpdate)){
+            return response()->json(
+                [
+                    "result" => "Success",
+                    "message" => "Location updated Successfully!",
+                    "title" => "Success",
+                ], 200)->header('Content-Type', 'application/json');
+        }else{
+            return response()->json(
+                [
+                    "result" => "error",
+                    "message" => "Location update Failed!",
+                    "title" => "Error",
+                ], 403)->header('Content-Type', 'application/json');
+        }
+    }
 }

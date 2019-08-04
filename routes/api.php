@@ -59,3 +59,4 @@ Route::get('getBooking/{id}','BookingController@getBooking');
 Route::get('getDriverBookings/{id}','BookingController@getDriverBookings');
 
 Route::post('updateBooking','BookingController@updateBooking');
+Route::post('updateLocation','BookingController@updateLocation');
