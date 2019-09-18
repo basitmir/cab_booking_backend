@@ -8,7 +8,7 @@ This is the backend using LARAVEL for https://github.com/basitmir/cab_booking
   <img src="screenshots/addNewDriver.png" height="400">
 
   <img src="screenshots/driversEdit.png" height="400">
- <img src="screenshots/driversValidation.png" height="400">
+ <img src="screenshots/driverValidation.png" height="400">
  <img src="screenshots/allUsers.png" height="400">
  <img src="screenshots/bookings.png" height="400">
  <img src="screenshots/sucessMessage.png" height="400">
